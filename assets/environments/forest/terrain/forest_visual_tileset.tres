@@ -1,0 +1,453 @@
+[gd_resource type="TileSet" load_steps=129 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_01.png" id="tex_0"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_02.png" id="tex_1"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_03.png" id="tex_2"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_04.png" id="tex_3"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_05.png" id="tex_4"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_06.png" id="tex_5"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_07.png" id="tex_6"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dark_08.png" id="tex_7"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_01.png" id="tex_8"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_02.png" id="tex_9"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_03.png" id="tex_10"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_04.png" id="tex_11"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_05.png" id="tex_12"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_06.png" id="tex_13"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_07.png" id="tex_14"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_08.png" id="tex_15"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_01.png" id="tex_16"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_02.png" id="tex_17"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_03.png" id="tex_18"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_04.png" id="tex_19"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_05.png" id="tex_20"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_06.png" id="tex_21"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_07.png" id="tex_22"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/soil_dirt_08.png" id="tex_23"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_01.png" id="tex_24"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_02.png" id="tex_25"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_03.png" id="tex_26"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_04.png" id="tex_27"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_05.png" id="tex_28"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_06.png" id="tex_29"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_07.png" id="tex_30"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_08.png" id="tex_31"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_09.png" id="tex_32"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_10.png" id="tex_33"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_11.png" id="tex_34"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_12.png" id="tex_35"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_13.png" id="tex_36"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_14.png" id="tex_37"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_15.png" id="tex_38"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_dirt_transition_16.png" id="tex_39"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_01.png" id="tex_40"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_02.png" id="tex_41"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_03.png" id="tex_42"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_04.png" id="tex_43"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_05.png" id="tex_44"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_06.png" id="tex_45"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_07.png" id="tex_46"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/grass_moss_transition_08.png" id="tex_47"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_01.png" id="tex_48"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_02.png" id="tex_49"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_03.png" id="tex_50"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_04.png" id="tex_51"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_05.png" id="tex_52"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_06.png" id="tex_53"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_07.png" id="tex_54"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/ground_detail_08.png" id="tex_55"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_01.png" id="tex_56"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_02.png" id="tex_57"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_03.png" id="tex_58"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_04.png" id="tex_59"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_05.png" id="tex_60"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_06.png" id="tex_61"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_07.png" id="tex_62"]
+[ext_resource type="Texture2D" path="res://assets/environments/forest/terrain/mystical_ground_08.png" id="tex_63"]
+
+[sub_resource type="TileSetAtlasSource" id="atlas_0"]
+texture = ExtResource("tex_0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_1"]
+texture = ExtResource("tex_1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_2"]
+texture = ExtResource("tex_2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_3"]
+texture = ExtResource("tex_3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_4"]
+texture = ExtResource("tex_4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_5"]
+texture = ExtResource("tex_5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_6"]
+texture = ExtResource("tex_6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_7"]
+texture = ExtResource("tex_7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_8"]
+texture = ExtResource("tex_8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_9"]
+texture = ExtResource("tex_9")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_10"]
+texture = ExtResource("tex_10")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_11"]
+texture = ExtResource("tex_11")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_12"]
+texture = ExtResource("tex_12")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_13"]
+texture = ExtResource("tex_13")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_14"]
+texture = ExtResource("tex_14")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_15"]
+texture = ExtResource("tex_15")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_16"]
+texture = ExtResource("tex_16")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_17"]
+texture = ExtResource("tex_17")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_18"]
+texture = ExtResource("tex_18")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_19"]
+texture = ExtResource("tex_19")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_20"]
+texture = ExtResource("tex_20")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_21"]
+texture = ExtResource("tex_21")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_22"]
+texture = ExtResource("tex_22")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_23"]
+texture = ExtResource("tex_23")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_24"]
+texture = ExtResource("tex_24")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_25"]
+texture = ExtResource("tex_25")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_26"]
+texture = ExtResource("tex_26")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_27"]
+texture = ExtResource("tex_27")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_28"]
+texture = ExtResource("tex_28")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_29"]
+texture = ExtResource("tex_29")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_30"]
+texture = ExtResource("tex_30")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_31"]
+texture = ExtResource("tex_31")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_32"]
+texture = ExtResource("tex_32")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_33"]
+texture = ExtResource("tex_33")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_34"]
+texture = ExtResource("tex_34")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_35"]
+texture = ExtResource("tex_35")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_36"]
+texture = ExtResource("tex_36")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_37"]
+texture = ExtResource("tex_37")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_38"]
+texture = ExtResource("tex_38")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_39"]
+texture = ExtResource("tex_39")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_40"]
+texture = ExtResource("tex_40")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_41"]
+texture = ExtResource("tex_41")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_42"]
+texture = ExtResource("tex_42")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_43"]
+texture = ExtResource("tex_43")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_44"]
+texture = ExtResource("tex_44")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_45"]
+texture = ExtResource("tex_45")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_46"]
+texture = ExtResource("tex_46")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_47"]
+texture = ExtResource("tex_47")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_48"]
+texture = ExtResource("tex_48")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_49"]
+texture = ExtResource("tex_49")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_50"]
+texture = ExtResource("tex_50")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_51"]
+texture = ExtResource("tex_51")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_52"]
+texture = ExtResource("tex_52")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_53"]
+texture = ExtResource("tex_53")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_54"]
+texture = ExtResource("tex_54")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_55"]
+texture = ExtResource("tex_55")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_56"]
+texture = ExtResource("tex_56")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_57"]
+texture = ExtResource("tex_57")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_58"]
+texture = ExtResource("tex_58")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_59"]
+texture = ExtResource("tex_59")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_60"]
+texture = ExtResource("tex_60")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_61"]
+texture = ExtResource("tex_61")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_62"]
+texture = ExtResource("tex_62")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="atlas_63"]
+texture = ExtResource("tex_63")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("atlas_0")
+sources/1 = SubResource("atlas_1")
+sources/2 = SubResource("atlas_2")
+sources/3 = SubResource("atlas_3")
+sources/4 = SubResource("atlas_4")
+sources/5 = SubResource("atlas_5")
+sources/6 = SubResource("atlas_6")
+sources/7 = SubResource("atlas_7")
+sources/8 = SubResource("atlas_8")
+sources/9 = SubResource("atlas_9")
+sources/10 = SubResource("atlas_10")
+sources/11 = SubResource("atlas_11")
+sources/12 = SubResource("atlas_12")
+sources/13 = SubResource("atlas_13")
+sources/14 = SubResource("atlas_14")
+sources/15 = SubResource("atlas_15")
+sources/16 = SubResource("atlas_16")
+sources/17 = SubResource("atlas_17")
+sources/18 = SubResource("atlas_18")
+sources/19 = SubResource("atlas_19")
+sources/20 = SubResource("atlas_20")
+sources/21 = SubResource("atlas_21")
+sources/22 = SubResource("atlas_22")
+sources/23 = SubResource("atlas_23")
+sources/24 = SubResource("atlas_24")
+sources/25 = SubResource("atlas_25")
+sources/26 = SubResource("atlas_26")
+sources/27 = SubResource("atlas_27")
+sources/28 = SubResource("atlas_28")
+sources/29 = SubResource("atlas_29")
+sources/30 = SubResource("atlas_30")
+sources/31 = SubResource("atlas_31")
+sources/32 = SubResource("atlas_32")
+sources/33 = SubResource("atlas_33")
+sources/34 = SubResource("atlas_34")
+sources/35 = SubResource("atlas_35")
+sources/36 = SubResource("atlas_36")
+sources/37 = SubResource("atlas_37")
+sources/38 = SubResource("atlas_38")
+sources/39 = SubResource("atlas_39")
+sources/40 = SubResource("atlas_40")
+sources/41 = SubResource("atlas_41")
+sources/42 = SubResource("atlas_42")
+sources/43 = SubResource("atlas_43")
+sources/44 = SubResource("atlas_44")
+sources/45 = SubResource("atlas_45")
+sources/46 = SubResource("atlas_46")
+sources/47 = SubResource("atlas_47")
+sources/48 = SubResource("atlas_48")
+sources/49 = SubResource("atlas_49")
+sources/50 = SubResource("atlas_50")
+sources/51 = SubResource("atlas_51")
+sources/52 = SubResource("atlas_52")
+sources/53 = SubResource("atlas_53")
+sources/54 = SubResource("atlas_54")
+sources/55 = SubResource("atlas_55")
+sources/56 = SubResource("atlas_56")
+sources/57 = SubResource("atlas_57")
+sources/58 = SubResource("atlas_58")
+sources/59 = SubResource("atlas_59")
+sources/60 = SubResource("atlas_60")
+sources/61 = SubResource("atlas_61")
+sources/62 = SubResource("atlas_62")
+sources/63 = SubResource("atlas_63")

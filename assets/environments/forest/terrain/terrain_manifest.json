@@ -1,0 +1,1033 @@
+{
+  "tile_size": [
+    32,
+    32
+  ],
+  "notes": "One atlas source per existing individual PNG. Original source row/column are provenance only. No adjacency, terrain sets or collision configured.",
+  "tiles": [
+    {
+      "slot": "01",
+      "row_0_based": "0",
+      "column_0_based": "0",
+      "filename": "grass_dark_01.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_01.png",
+      "category": "grass_dark",
+      "source_id": 0,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "02",
+      "row_0_based": "0",
+      "column_0_based": "1",
+      "filename": "grass_dark_02.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_02.png",
+      "category": "grass_dark",
+      "source_id": 1,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "03",
+      "row_0_based": "0",
+      "column_0_based": "2",
+      "filename": "grass_dark_03.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_03.png",
+      "category": "grass_dark",
+      "source_id": 2,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "04",
+      "row_0_based": "0",
+      "column_0_based": "3",
+      "filename": "grass_dark_04.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_04.png",
+      "category": "grass_dark",
+      "source_id": 3,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "05",
+      "row_0_based": "0",
+      "column_0_based": "4",
+      "filename": "grass_dark_05.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_05.png",
+      "category": "grass_dark",
+      "source_id": 4,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "06",
+      "row_0_based": "0",
+      "column_0_based": "5",
+      "filename": "grass_dark_06.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_06.png",
+      "category": "grass_dark",
+      "source_id": 5,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "07",
+      "row_0_based": "0",
+      "column_0_based": "6",
+      "filename": "grass_dark_07.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_07.png",
+      "category": "grass_dark",
+      "source_id": 6,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "08",
+      "row_0_based": "0",
+      "column_0_based": "7",
+      "filename": "grass_dark_08.png",
+      "path": "res://assets/environments/forest/terrain/grass_dark_08.png",
+      "category": "grass_dark",
+      "source_id": 7,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "09",
+      "row_0_based": "1",
+      "column_0_based": "0",
+      "filename": "grass_moss_01.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_01.png",
+      "category": "grass_moss",
+      "source_id": 8,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "10",
+      "row_0_based": "1",
+      "column_0_based": "1",
+      "filename": "grass_moss_02.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_02.png",
+      "category": "grass_moss",
+      "source_id": 9,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "11",
+      "row_0_based": "1",
+      "column_0_based": "2",
+      "filename": "grass_moss_03.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_03.png",
+      "category": "grass_moss",
+      "source_id": 10,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "12",
+      "row_0_based": "1",
+      "column_0_based": "3",
+      "filename": "grass_moss_04.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_04.png",
+      "category": "grass_moss",
+      "source_id": 11,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "13",
+      "row_0_based": "1",
+      "column_0_based": "4",
+      "filename": "grass_moss_05.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_05.png",
+      "category": "grass_moss",
+      "source_id": 12,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "14",
+      "row_0_based": "1",
+      "column_0_based": "5",
+      "filename": "grass_moss_06.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_06.png",
+      "category": "grass_moss",
+      "source_id": 13,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "15",
+      "row_0_based": "1",
+      "column_0_based": "6",
+      "filename": "grass_moss_07.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_07.png",
+      "category": "grass_moss",
+      "source_id": 14,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "16",
+      "row_0_based": "1",
+      "column_0_based": "7",
+      "filename": "grass_moss_08.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_08.png",
+      "category": "grass_moss",
+      "source_id": 15,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "17",
+      "row_0_based": "2",
+      "column_0_based": "0",
+      "filename": "soil_dirt_01.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_01.png",
+      "category": "soil_dirt",
+      "source_id": 16,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "18",
+      "row_0_based": "2",
+      "column_0_based": "1",
+      "filename": "soil_dirt_02.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_02.png",
+      "category": "soil_dirt",
+      "source_id": 17,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "19",
+      "row_0_based": "2",
+      "column_0_based": "2",
+      "filename": "soil_dirt_03.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_03.png",
+      "category": "soil_dirt",
+      "source_id": 18,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "20",
+      "row_0_based": "2",
+      "column_0_based": "3",
+      "filename": "soil_dirt_04.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_04.png",
+      "category": "soil_dirt",
+      "source_id": 19,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "21",
+      "row_0_based": "2",
+      "column_0_based": "4",
+      "filename": "soil_dirt_05.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_05.png",
+      "category": "soil_dirt",
+      "source_id": 20,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "22",
+      "row_0_based": "2",
+      "column_0_based": "5",
+      "filename": "soil_dirt_06.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_06.png",
+      "category": "soil_dirt",
+      "source_id": 21,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "23",
+      "row_0_based": "2",
+      "column_0_based": "6",
+      "filename": "soil_dirt_07.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_07.png",
+      "category": "soil_dirt",
+      "source_id": 22,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "24",
+      "row_0_based": "2",
+      "column_0_based": "7",
+      "filename": "soil_dirt_08.png",
+      "path": "res://assets/environments/forest/terrain/soil_dirt_08.png",
+      "category": "soil_dirt",
+      "source_id": 23,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "25",
+      "row_0_based": "3",
+      "column_0_based": "0",
+      "filename": "grass_dirt_transition_01.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_01.png",
+      "category": "grass_dirt_transition",
+      "source_id": 24,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "26",
+      "row_0_based": "3",
+      "column_0_based": "1",
+      "filename": "grass_dirt_transition_02.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_02.png",
+      "category": "grass_dirt_transition",
+      "source_id": 25,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "27",
+      "row_0_based": "3",
+      "column_0_based": "2",
+      "filename": "grass_dirt_transition_03.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_03.png",
+      "category": "grass_dirt_transition",
+      "source_id": 26,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "28",
+      "row_0_based": "3",
+      "column_0_based": "3",
+      "filename": "grass_dirt_transition_04.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_04.png",
+      "category": "grass_dirt_transition",
+      "source_id": 27,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "29",
+      "row_0_based": "3",
+      "column_0_based": "4",
+      "filename": "grass_dirt_transition_05.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_05.png",
+      "category": "grass_dirt_transition",
+      "source_id": 28,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "30",
+      "row_0_based": "3",
+      "column_0_based": "5",
+      "filename": "grass_dirt_transition_06.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_06.png",
+      "category": "grass_dirt_transition",
+      "source_id": 29,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "31",
+      "row_0_based": "3",
+      "column_0_based": "6",
+      "filename": "grass_dirt_transition_07.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_07.png",
+      "category": "grass_dirt_transition",
+      "source_id": 30,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "32",
+      "row_0_based": "3",
+      "column_0_based": "7",
+      "filename": "grass_dirt_transition_08.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_08.png",
+      "category": "grass_dirt_transition",
+      "source_id": 31,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "33",
+      "row_0_based": "4",
+      "column_0_based": "0",
+      "filename": "grass_dirt_transition_09.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_09.png",
+      "category": "grass_dirt_transition",
+      "source_id": 32,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "34",
+      "row_0_based": "4",
+      "column_0_based": "1",
+      "filename": "grass_dirt_transition_10.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_10.png",
+      "category": "grass_dirt_transition",
+      "source_id": 33,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "35",
+      "row_0_based": "4",
+      "column_0_based": "2",
+      "filename": "grass_dirt_transition_11.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_11.png",
+      "category": "grass_dirt_transition",
+      "source_id": 34,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "36",
+      "row_0_based": "4",
+      "column_0_based": "3",
+      "filename": "grass_dirt_transition_12.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_12.png",
+      "category": "grass_dirt_transition",
+      "source_id": 35,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "37",
+      "row_0_based": "4",
+      "column_0_based": "4",
+      "filename": "grass_dirt_transition_13.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_13.png",
+      "category": "grass_dirt_transition",
+      "source_id": 36,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "38",
+      "row_0_based": "4",
+      "column_0_based": "5",
+      "filename": "grass_dirt_transition_14.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_14.png",
+      "category": "grass_dirt_transition",
+      "source_id": 37,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "39",
+      "row_0_based": "4",
+      "column_0_based": "6",
+      "filename": "grass_dirt_transition_15.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_15.png",
+      "category": "grass_dirt_transition",
+      "source_id": 38,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "40",
+      "row_0_based": "4",
+      "column_0_based": "7",
+      "filename": "grass_dirt_transition_16.png",
+      "path": "res://assets/environments/forest/terrain/grass_dirt_transition_16.png",
+      "category": "grass_dirt_transition",
+      "source_id": 39,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "41",
+      "row_0_based": "5",
+      "column_0_based": "0",
+      "filename": "grass_moss_transition_01.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_01.png",
+      "category": "grass_moss_transition",
+      "source_id": 40,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "42",
+      "row_0_based": "5",
+      "column_0_based": "1",
+      "filename": "grass_moss_transition_02.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_02.png",
+      "category": "grass_moss_transition",
+      "source_id": 41,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "43",
+      "row_0_based": "5",
+      "column_0_based": "2",
+      "filename": "grass_moss_transition_03.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_03.png",
+      "category": "grass_moss_transition",
+      "source_id": 42,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "44",
+      "row_0_based": "5",
+      "column_0_based": "3",
+      "filename": "grass_moss_transition_04.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_04.png",
+      "category": "grass_moss_transition",
+      "source_id": 43,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "45",
+      "row_0_based": "5",
+      "column_0_based": "4",
+      "filename": "grass_moss_transition_05.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_05.png",
+      "category": "grass_moss_transition",
+      "source_id": 44,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "46",
+      "row_0_based": "5",
+      "column_0_based": "5",
+      "filename": "grass_moss_transition_06.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_06.png",
+      "category": "grass_moss_transition",
+      "source_id": 45,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "47",
+      "row_0_based": "5",
+      "column_0_based": "6",
+      "filename": "grass_moss_transition_07.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_07.png",
+      "category": "grass_moss_transition",
+      "source_id": 46,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "48",
+      "row_0_based": "5",
+      "column_0_based": "7",
+      "filename": "grass_moss_transition_08.png",
+      "path": "res://assets/environments/forest/terrain/grass_moss_transition_08.png",
+      "category": "grass_moss_transition",
+      "source_id": 47,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "49",
+      "row_0_based": "6",
+      "column_0_based": "0",
+      "filename": "ground_detail_01.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_01.png",
+      "category": "ground_detail",
+      "source_id": 48,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "50",
+      "row_0_based": "6",
+      "column_0_based": "1",
+      "filename": "ground_detail_02.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_02.png",
+      "category": "ground_detail",
+      "source_id": 49,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "51",
+      "row_0_based": "6",
+      "column_0_based": "2",
+      "filename": "ground_detail_03.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_03.png",
+      "category": "ground_detail",
+      "source_id": 50,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "52",
+      "row_0_based": "6",
+      "column_0_based": "3",
+      "filename": "ground_detail_04.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_04.png",
+      "category": "ground_detail",
+      "source_id": 51,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "53",
+      "row_0_based": "6",
+      "column_0_based": "4",
+      "filename": "ground_detail_05.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_05.png",
+      "category": "ground_detail",
+      "source_id": 52,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "54",
+      "row_0_based": "6",
+      "column_0_based": "5",
+      "filename": "ground_detail_06.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_06.png",
+      "category": "ground_detail",
+      "source_id": 53,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "55",
+      "row_0_based": "6",
+      "column_0_based": "6",
+      "filename": "ground_detail_07.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_07.png",
+      "category": "ground_detail",
+      "source_id": 54,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "56",
+      "row_0_based": "6",
+      "column_0_based": "7",
+      "filename": "ground_detail_08.png",
+      "path": "res://assets/environments/forest/terrain/ground_detail_08.png",
+      "category": "ground_detail",
+      "source_id": 55,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "57",
+      "row_0_based": "7",
+      "column_0_based": "0",
+      "filename": "mystical_ground_01.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_01.png",
+      "category": "mystical_ground",
+      "source_id": 56,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "58",
+      "row_0_based": "7",
+      "column_0_based": "1",
+      "filename": "mystical_ground_02.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_02.png",
+      "category": "mystical_ground",
+      "source_id": 57,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "59",
+      "row_0_based": "7",
+      "column_0_based": "2",
+      "filename": "mystical_ground_03.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_03.png",
+      "category": "mystical_ground",
+      "source_id": 58,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "60",
+      "row_0_based": "7",
+      "column_0_based": "3",
+      "filename": "mystical_ground_04.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_04.png",
+      "category": "mystical_ground",
+      "source_id": 59,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "61",
+      "row_0_based": "7",
+      "column_0_based": "4",
+      "filename": "mystical_ground_05.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_05.png",
+      "category": "mystical_ground",
+      "source_id": 60,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "62",
+      "row_0_based": "7",
+      "column_0_based": "5",
+      "filename": "mystical_ground_06.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_06.png",
+      "category": "mystical_ground",
+      "source_id": 61,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "63",
+      "row_0_based": "7",
+      "column_0_based": "6",
+      "filename": "mystical_ground_07.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_07.png",
+      "category": "mystical_ground",
+      "source_id": 62,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "slot": "64",
+      "row_0_based": "7",
+      "column_0_based": "7",
+      "filename": "mystical_ground_08.png",
+      "path": "res://assets/environments/forest/terrain/mystical_ground_08.png",
+      "category": "mystical_ground",
+      "source_id": 63,
+      "atlas_coordinates": [
+        0,
+        0
+      ],
+      "alternative_id": 0,
+      "width": 32,
+      "height": 32
+    }
+  ]
+}

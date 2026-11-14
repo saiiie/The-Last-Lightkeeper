@@ -1,0 +1,73 @@
+{
+  "animations": [
+    {
+      "name": "idle_down",
+      "direction": "down",
+      "frames": [
+        {
+          "order": 0,
+          "path": "res://assets/characters/player/aren/idle/aren_idle_down.png",
+          "width": 64,
+          "height": 64
+        }
+      ],
+      "loop": false
+    },
+    {
+      "name": "idle_up",
+      "direction": "up",
+      "frames": [
+        {
+          "order": 0,
+          "path": "res://assets/characters/player/aren/idle/aren_idle_up.png",
+          "width": 64,
+          "height": 64
+        }
+      ],
+      "loop": false
+    },
+    {
+      "name": "idle_left",
+      "direction": "left",
+      "frames": [
+        {
+          "order": 0,
+          "path": "res://assets/characters/player/aren/idle/aren_idle_left.png",
+          "width": 64,
+          "height": 64
+        }
+      ],
+      "loop": false
+    },
+    {
+      "name": "idle_right",
+      "direction": "right",
+      "frames": [
+        {
+          "order": 0,
+          "path": "res://assets/characters/player/aren/idle/aren_idle_right.png",
+          "width": 64,
+          "height": 64
+        }
+      ],
+      "loop": false
+    }
+  ],
+  "walk_frames": [],
+  "spritesheet": {
+    "path": "res://assets/characters/player/aren/idle/aren_idle_spritesheet.png",
+    "width": 256,
+    "height": 64,
+    "columns": [
+      "down",
+      "up",
+      "left",
+      "right"
+    ],
+    "frame_size": [
+      64,
+      64
+    ]
+  },
+  "notes": "Single static frame per direction; speed is serialization metadata, not an authored animation timing. Source README calls pack a review draft; current user request identifies supplied assets as approved. References/previews are not gameplay frames."
+}

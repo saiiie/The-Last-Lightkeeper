@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/player/aren/idle/aren_idle_down.png" id="down"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/aren/idle/aren_idle_up.png" id="up"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/aren/idle/aren_idle_left.png" id="left"]
+[ext_resource type="Texture2D" path="res://assets/characters/player/aren/idle/aren_idle_right.png" id="right"]
+
+[resource]
+animations = [
+{"frames": [{"duration": 1.0, "texture": ExtResource("down")}], "loop": false, "name": &"idle_down", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("up")}], "loop": false, "name": &"idle_up", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("left")}], "loop": false, "name": &"idle_left", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("right")}], "loop": false, "name": &"idle_right", "speed": 1.0}
+]

@@ -1,0 +1,11 @@
+# Godot 4 cache; keep source .import sidecars and .uid files in version control.
+.godot/
+.godot-mono/
+export_credentials.cfg
+
+# Generated exports and remote validation logs.
+/build/
+/ci-logs/
+*.tmp
+__pycache__/
+*.py[cod]

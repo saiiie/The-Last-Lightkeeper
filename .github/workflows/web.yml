@@ -1,0 +1,112 @@
+{
+  "name": "Validate and export Web",
+  "on": {
+    "push": {
+      "branches": [
+        "main"
+      ]
+    },
+    "workflow_dispatch": {
+      "inputs": {
+        "deploy_pages": {
+          "description": "Publish preview after approval (also requires ENABLE_PAGES=true)",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      }
+    }
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "env": {
+    "GODOT_VERSION": "4.5.2"
+  },
+  "jobs": {
+    "build": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 20,
+      "steps": [
+        {
+          "uses": "actions/checkout@v4"
+        },
+        {
+          "name": "Static project checks",
+          "run": "python3 tools/validate_project.py"
+        },
+        {
+          "name": "Download official engine and matching templates; verify release checksums",
+          "shell": "bash",
+          "run": "set -euo pipefail\n test \"$GITHUB_ACTIONS\" = \"true\"\n test \"$RUNNER_ENVIRONMENT\" = \"github-hosted\"\n cd \"$RUNNER_TEMP\"\n base=\"https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable\"\n engine=\"Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip\"\n templates=\"Godot_v${GODOT_VERSION}-stable_export_templates.tpz\"\n curl --fail --location --retry 3 \"$base/$engine\" -o \"$engine\"\n curl --fail --location --retry 3 \"$base/$templates\" -o \"$templates\"\n curl --fail --location --retry 3 \"$base/SHA512-SUMS.txt\" -o SHA512-SUMS.txt\n grep -F \"$engine\" SHA512-SUMS.txt > selected-checksums.txt\n grep -F \"$templates\" SHA512-SUMS.txt >> selected-checksums.txt\n test \"$(wc -l < selected-checksums.txt)\" -eq 2\n sha512sum --check selected-checksums.txt\n mkdir -p godot-bin\n unzip -q \"$engine\" -d godot-bin\n mv \"godot-bin/Godot_v${GODOT_VERSION}-stable_linux.x86_64\" godot-bin/godot\n chmod +x godot-bin/godot\n echo \"$RUNNER_TEMP/godot-bin\" >> \"$GITHUB_PATH\"\n unzip -q \"$templates\" -d godot-templates\n template_dir=\"$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable\"\n mkdir -p \"$template_dir\"\n cp -a godot-templates/templates/. \"$template_dir/\"\n"
+        },
+        {
+          "name": "Import, load-check, smoke-test and export remotely",
+          "run": "python3 tools/remote_validate_export.py"
+        },
+        {
+          "name": "Upload downloadable Web build",
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "lightkeeper-web-${{ github.sha }}",
+            "path": "build/web/",
+            "if-no-files-found": "error",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "Upload remote validation logs",
+          "if": "${{ always() }}",
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "godot-logs-${{ github.run_id }}",
+            "path": "ci-logs/",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        }
+      ]
+    },
+    "deploy": {
+      "needs": "build",
+      "if": "${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages && vars.ENABLE_PAGES == 'true' && github.ref == 'refs/heads/main' }}",
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 10,
+      "permissions": {
+        "contents": "read",
+        "pages": "write",
+        "id-token": "write"
+      },
+      "concurrency": {
+        "group": "github-pages",
+        "cancel-in-progress": false
+      },
+      "environment": {
+        "name": "github-pages",
+        "url": "${{ steps.deployment.outputs.page_url }}"
+      },
+      "steps": [
+        {
+          "uses": "actions/download-artifact@v4",
+          "with": {
+            "name": "lightkeeper-web-${{ github.sha }}",
+            "path": "build/web"
+          }
+        },
+        {
+          "uses": "actions/configure-pages@v5"
+        },
+        {
+          "uses": "actions/upload-pages-artifact@v3",
+          "with": {
+            "path": "build/web"
+          }
+        },
+        {
+          "uses": "actions/deploy-pages@v4",
+          "id": "deployment"
+        }
+      ]
+    }
+  }
+}
