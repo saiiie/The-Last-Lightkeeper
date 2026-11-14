@@ -29,5 +29,22 @@ func _initialize() -> void:
 		quit(1)
 		return
 	instance.free()
+	var forest_scene = load("res://scenes/levels/whispering_forest_test.tscn")
+	if not forest_scene is PackedScene:
+		push_error("Forest test scene failed to load.")
+		quit(1)
+		return
+	var forest = forest_scene.instantiate()
+	var terrain = forest.get_node("Terrain")
+	if not terrain is TileMapLayer or terrain.source_ids.size() != 1536:
+		push_error("Forest terrain data is incomplete.")
+		quit(1)
+		return
+	for required in ["WorldObjects/Decorations", "WorldObjects/Obstacles", "WorldObjects/EnvironmentalProps", "SpawnMarker", "LightingHooks", "Boundary"]:
+		if not forest.has_node(required):
+			push_error("Missing forest group: " + required)
+			quit(1)
+			return
+	forest.free()
 	print("Remote resource checks passed.")
 	quit(0)

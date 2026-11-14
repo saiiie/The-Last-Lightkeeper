@@ -1,0 +1,1134 @@
+[gd_scene load_steps=25 format=3]
+
+[ext_resource type="TileSet" path="res://assets/environments/forest/terrain/forest_visual_tileset.tres" id="tiles"]
+[ext_resource type="Script" path="res://scripts/forest_terrain.gd" id="terrain_script"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_brambles.tscn" id="forest_brambles"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_broken_trunk.tscn" id="forest_broken_trunk"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_bush.tscn" id="forest_bush"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_ferns.tscn" id="forest_ferns"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_rock_cluster.tscn" id="forest_rock_cluster"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_roots.tscn" id="forest_roots"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_stump.tscn" id="forest_stump"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/forest_withered_shrub.tscn" id="forest_withered_shrub"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_barrel.tscn" id="prop_barrel"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_barrel_damaged.tscn" id="prop_barrel_damaged"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_boulder_small.tscn" id="prop_boulder_small"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_crate.tscn" id="prop_crate"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_crate_broken.tscn" id="prop_crate_broken"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_fallen_log.tscn" id="prop_fallen_log"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_wood_debris_charred.tscn" id="prop_wood_debris_charred"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/prop_workbench_small.tscn" id="prop_workbench_small"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/tree_ancient.tscn" id="tree_ancient"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/tree_charred.tscn" id="tree_charred"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/tree_dead.tscn" id="tree_dead"]
+[ext_resource type="PackedScene" path="res://scenes/props/forest/tree_young.tscn" id="tree_young"]
+
+[sub_resource type="RectangleShape2D" id="horizontal"]
+size = Vector2(1536, 32)
+
+[sub_resource type="RectangleShape2D" id="vertical"]
+size = Vector2(32, 1024)
+
+[node name="WhisperingForestTest" type="Node2D"]
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+modulate = Color(0.66, 0.76, 0.74, 1)
+tile_set = ExtResource("tiles")
+script = ExtResource("terrain_script")
+source_ids = PackedInt32Array(8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 17, 17, 0, 17, 17, 18, 17, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 17, 17, 18, 17, 0, 8, 8, 8, 8, 0, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 0, 0, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 0, 0, 0, 8, 8, 17, 17, 17, 17, 0, 0, 0, 0, 17, 17, 17, 18, 17, 0, 8, 17, 17, 17, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 17, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 17, 17, 17, 18, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 17, 17, 17, 18, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 17, 17, 18, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 18, 17, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 17, 17, 18, 17, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 18, 17, 17, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 17, 17, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 18, 17, 17, 17, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 17, 18, 17, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 17, 17, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 18, 17, 17, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 17, 17, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 17, 17, 17, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 18, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 17, 17, 17, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 18, 17, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 17, 18, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 17, 17, 17, 17, 17, 17, 18, 17, 17, 0, 0, 0, 0, 18, 17, 17, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 17, 0, 0, 0, 0, 0, 0, 58, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 18, 8, 8, 8, 0, 0, 0, 0, 0, 17, 17, 17, 17, 17, 18, 17, 17, 17, 17, 17, 17, 18, 17, 17, 0, 0, 0, 0, 0, 0, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 17, 17, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 18, 17, 17, 0, 0, 0, 17, 18, 17, 17, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 58, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 58, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 58, 8, 8, 0, 0, 0, 0)
+
+[node name="WorldObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+modulate = Color(0.72, 0.80, 0.78, 1)
+
+[node name="Decorations" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="Obstacles" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="EnvironmentalProps" type="Node2D" parent="WorldObjects"]
+y_sort_enabled = true
+
+[node name="tree_ancient_000" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(73, 119)
+
+[node name="tree_ancient_001" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(129, 105)
+
+[node name="forest_ferns_002" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(149, 127)
+
+[node name="tree_ancient_003" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(190, 122)
+
+[node name="tree_young_004" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(331, 110)
+
+[node name="tree_ancient_005" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(379, 111)
+
+[node name="tree_young_006" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(449, 102)
+
+[node name="forest_ferns_007" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(469, 124)
+
+[node name="tree_ancient_008" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(502, 105)
+
+[node name="tree_ancient_009" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(571, 108)
+
+[node name="tree_ancient_010" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(893, 120)
+
+[node name="tree_ancient_011" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(959, 108)
+
+[node name="forest_ferns_012" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(979, 130)
+
+[node name="tree_ancient_013" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1018, 106)
+
+[node name="forest_ferns_014" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1038, 128)
+
+[node name="tree_ancient_015" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1100, 115)
+
+[node name="forest_ferns_016" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1120, 137)
+
+[node name="tree_young_017" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1148, 109)
+
+[node name="tree_ancient_018" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1226, 117)
+
+[node name="forest_ferns_019" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1246, 139)
+
+[node name="tree_ancient_020" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1268, 116)
+
+[node name="tree_ancient_021" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1336, 102)
+
+[node name="tree_ancient_022" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1398, 105)
+
+[node name="tree_ancient_023" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1473, 119)
+
+[node name="tree_ancient_024" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(64, 185)
+
+[node name="tree_ancient_025" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(134, 186)
+
+[node name="tree_ancient_026" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1086, 168)
+
+[node name="tree_ancient_027" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1151, 168)
+
+[node name="tree_ancient_028" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1220, 166)
+
+[node name="tree_ancient_029" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1272, 184)
+
+[node name="tree_ancient_030" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1333, 175)
+
+[node name="tree_young_031" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1407, 177)
+
+[node name="tree_young_032" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1484, 169)
+
+[node name="tree_ancient_033" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(55, 239)
+
+[node name="tree_young_034" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(133, 246)
+
+[node name="tree_ancient_035" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1159, 245)
+
+[node name="tree_young_036" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1211, 232)
+
+[node name="tree_young_037" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1342, 246)
+
+[node name="tree_ancient_038" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1420, 250)
+
+[node name="forest_ferns_039" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1440, 272)
+
+[node name="tree_young_040" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1477, 248)
+
+[node name="forest_ferns_041" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1497, 270)
+
+[node name="tree_ancient_042" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(55, 313)
+
+[node name="forest_ferns_043" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(75, 335)
+
+[node name="tree_ancient_044" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(116, 296)
+
+[node name="tree_ancient_045" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1405, 306)
+
+[node name="tree_young_046" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1461, 298)
+
+[node name="tree_young_047" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(55, 378)
+
+[node name="forest_ferns_048" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(75, 400)
+
+[node name="tree_young_049" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(132, 360)
+
+[node name="tree_ancient_050" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(388, 373)
+
+[node name="tree_young_051" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(439, 361)
+
+[node name="tree_young_052" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(524, 364)
+
+[node name="tree_ancient_053" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(572, 359)
+
+[node name="tree_ancient_054" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(633, 365)
+
+[node name="forest_ferns_055" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(653, 387)
+
+[node name="tree_ancient_056" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(834, 369)
+
+[node name="tree_ancient_057" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(894, 369)
+
+[node name="tree_ancient_058" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1401, 371)
+
+[node name="tree_ancient_059" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1476, 360)
+
+[node name="tree_ancient_060" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(76, 437)
+
+[node name="forest_ferns_061" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(96, 459)
+
+[node name="tree_ancient_062" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(126, 441)
+
+[node name="forest_ferns_063" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(146, 463)
+
+[node name="tree_young_064" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(378, 432)
+
+[node name="forest_ferns_065" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(398, 454)
+
+[node name="tree_young_066" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(439, 430)
+
+[node name="tree_ancient_067" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(516, 435)
+
+[node name="tree_ancient_068" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(565, 430)
+
+[node name="tree_ancient_069" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(641, 423)
+
+[node name="tree_young_070" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(697, 435)
+
+[node name="tree_young_071" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(765, 438)
+
+[node name="tree_ancient_072" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(836, 430)
+
+[node name="tree_young_073" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(899, 438)
+
+[node name="tree_young_074" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(958, 437)
+
+[node name="tree_ancient_075" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1014, 433)
+
+[node name="tree_ancient_076" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1418, 434)
+
+[node name="tree_young_077" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1463, 430)
+
+[node name="tree_young_078" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(70, 504)
+
+[node name="forest_ferns_079" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(90, 526)
+
+[node name="tree_ancient_080" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(124, 489)
+
+[node name="tree_young_081" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(329, 486)
+
+[node name="tree_ancient_082" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(379, 496)
+
+[node name="forest_ferns_083" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(399, 518)
+
+[node name="tree_ancient_084" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(437, 505)
+
+[node name="tree_ancient_085" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(505, 487)
+
+[node name="tree_ancient_086" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(574, 495)
+
+[node name="tree_ancient_087" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(644, 500)
+
+[node name="tree_ancient_088" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(709, 501)
+
+[node name="forest_ferns_089" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(729, 523)
+
+[node name="tree_ancient_090" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(771, 502)
+
+[node name="tree_ancient_091" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(831, 496)
+
+[node name="tree_ancient_092" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(889, 492)
+
+[node name="tree_ancient_093" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(965, 493)
+
+[node name="tree_young_094" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1015, 490)
+
+[node name="forest_ferns_095" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1035, 512)
+
+[node name="tree_young_096" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1082, 492)
+
+[node name="tree_ancient_097" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1396, 494)
+
+[node name="tree_ancient_098" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1476, 503)
+
+[node name="forest_ferns_099" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1496, 525)
+
+[node name="tree_ancient_100" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(58, 555)
+
+[node name="forest_ferns_101" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(78, 577)
+
+[node name="tree_ancient_102" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(116, 554)
+
+[node name="tree_ancient_103" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(373, 559)
+
+[node name="tree_ancient_104" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(450, 554)
+
+[node name="forest_ferns_105" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(470, 576)
+
+[node name="tree_ancient_106" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(509, 554)
+
+[node name="tree_ancient_107" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(565, 554)
+
+[node name="tree_ancient_108" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(631, 562)
+
+[node name="tree_ancient_109" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(704, 557)
+
+[node name="tree_ancient_110" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(774, 560)
+
+[node name="forest_ferns_111" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(794, 582)
+
+[node name="tree_ancient_112" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(823, 558)
+
+[node name="tree_ancient_113" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(902, 565)
+
+[node name="tree_young_114" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(960, 562)
+
+[node name="tree_ancient_115" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1034, 553)
+
+[node name="tree_ancient_116" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1076, 550)
+
+[node name="tree_ancient_117" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1163, 554)
+
+[node name="tree_ancient_118" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1420, 563)
+
+[node name="tree_young_119" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(1477, 562)
+
+[node name="tree_ancient_120" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(58, 626)
+
+[node name="tree_ancient_121" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(126, 627)
+
+[node name="tree_young_122" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(385, 630)
+
+[node name="tree_ancient_123" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(437, 614)
+
+[node name="tree_ancient_124" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(503, 627)
+
+[node name="tree_ancient_125" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(573, 615)
+
+[node name="tree_ancient_126" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(644, 620)
+
+[node name="tree_young_127" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(714, 625)
+
+[node name="forest_ferns_128" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(734, 647)
+
+[node name="tree_ancient_129" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(779, 615)
+
+[node name="tree_ancient_130" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(827, 620)
+
+[node name="forest_ferns_131" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(847, 642)
+
+[node name="tree_ancient_132" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(885, 634)
+
+[node name="tree_young_133" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(953, 634)
+
+[node name="tree_ancient_134" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1012, 634)
+
+[node name="tree_ancient_135" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1077, 618)
+
+[node name="tree_ancient_136" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1144, 627)
+
+[node name="tree_ancient_137" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1418, 631)
+
+[node name="tree_ancient_138" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(1484, 614)
+
+[node name="tree_young_139" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(56, 685)
+
+[node name="tree_ancient_140" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(117, 694)
+
+[node name="tree_ancient_141" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(838, 679)
+
+[node name="tree_ancient_142" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(890, 680)
+
+[node name="forest_ferns_143" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(910, 702)
+
+[node name="tree_ancient_144" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(951, 692)
+
+[node name="tree_dead_145" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1019, 684)
+
+[node name="tree_dead_146" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1396, 686)
+
+[node name="forest_withered_shrub_147" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1416, 708)
+
+[node name="tree_charred_148" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1474, 694)
+
+[node name="tree_ancient_149" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(64, 748)
+
+[node name="forest_ferns_150" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(84, 770)
+
+[node name="tree_ancient_151" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(129, 747)
+
+[node name="tree_ancient_152" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(192, 753)
+
+[node name="tree_dead_153" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1335, 754)
+
+[node name="tree_dead_154" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1405, 758)
+
+[node name="tree_charred_155" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1478, 751)
+
+[node name="forest_withered_shrub_156" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1498, 773)
+
+[node name="tree_ancient_157" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(57, 811)
+
+[node name="forest_ferns_158" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(77, 833)
+
+[node name="tree_ancient_159" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(136, 826)
+
+[node name="tree_ancient_160" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(189, 825)
+
+[node name="tree_young_161" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(246, 821)
+
+[node name="forest_ferns_162" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(266, 843)
+
+[node name="tree_dead_163" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1339, 824)
+
+[node name="tree_dead_164" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1407, 812)
+
+[node name="tree_charred_165" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1470, 821)
+
+[node name="tree_ancient_166" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(68, 887)
+
+[node name="tree_ancient_167" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(116, 876)
+
+[node name="tree_young_168" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(183, 875)
+
+[node name="tree_ancient_169" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(249, 887)
+
+[node name="tree_ancient_170" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(630, 890)
+
+[node name="tree_ancient_171" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(695, 884)
+
+[node name="tree_dead_172" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1355, 889)
+
+[node name="forest_withered_shrub_173" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1375, 911)
+
+[node name="tree_dead_174" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1405, 872)
+
+[node name="tree_charred_175" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1471, 871)
+
+[node name="forest_withered_shrub_176" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1491, 893)
+
+[node name="tree_ancient_177" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(57, 936)
+
+[node name="forest_ferns_178" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(77, 958)
+
+[node name="tree_young_179" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(136, 944)
+
+[node name="forest_ferns_180" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(156, 966)
+
+[node name="tree_ancient_181" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(182, 953)
+
+[node name="tree_ancient_182" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(253, 939)
+
+[node name="tree_ancient_183" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(316, 947)
+
+[node name="tree_young_184" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(506, 947)
+
+[node name="tree_ancient_185" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(568, 948)
+
+[node name="tree_young_186" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(650, 942)
+
+[node name="tree_ancient_187" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(709, 952)
+
+[node name="forest_ferns_188" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(729, 974)
+
+[node name="tree_young_189" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(774, 943)
+
+[node name="forest_ferns_190" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(794, 965)
+
+[node name="tree_young_191" parent="WorldObjects/Obstacles" instance=ExtResource("tree_young")]
+position = Vector2(823, 943)
+
+[node name="tree_ancient_192" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(886, 943)
+
+[node name="tree_ancient_193" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(970, 946)
+
+[node name="tree_dead_194" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1028, 946)
+
+[node name="tree_charred_195" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1080, 941)
+
+[node name="forest_withered_shrub_196" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1100, 963)
+
+[node name="tree_dead_197" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1219, 953)
+
+[node name="forest_withered_shrub_198" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1239, 975)
+
+[node name="tree_dead_199" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1285, 953)
+
+[node name="tree_charred_200" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1351, 954)
+
+[node name="forest_withered_shrub_201" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1371, 976)
+
+[node name="tree_charred_202" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1409, 954)
+
+[node name="forest_withered_shrub_203" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1429, 976)
+
+[node name="tree_dead_204" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1460, 941)
+
+[node name="forest_withered_shrub_205" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1480, 963)
+
+[node name="tree_ancient_206" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(59, 1012)
+
+[node name="forest_ferns_207" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(79, 1034)
+
+[node name="tree_ancient_208" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(137, 1014)
+
+[node name="forest_ferns_209" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(157, 1036)
+
+[node name="tree_ancient_210" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(204, 1000)
+
+[node name="tree_ancient_211" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(254, 1000)
+
+[node name="forest_ferns_212" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(274, 1022)
+
+[node name="tree_ancient_213" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(311, 1011)
+
+[node name="tree_ancient_214" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(382, 1014)
+
+[node name="tree_ancient_215" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(438, 1001)
+
+[node name="tree_ancient_216" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(505, 1004)
+
+[node name="tree_ancient_217" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(586, 1006)
+
+[node name="forest_ferns_218" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(606, 1028)
+
+[node name="tree_ancient_219" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(652, 1005)
+
+[node name="tree_ancient_220" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(711, 1006)
+
+[node name="forest_ferns_221" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(731, 1028)
+
+[node name="tree_ancient_222" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(773, 1000)
+
+[node name="tree_ancient_223" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(826, 1017)
+
+[node name="forest_ferns_224" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(846, 1039)
+
+[node name="tree_ancient_225" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(908, 1007)
+
+[node name="forest_ferns_226" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(928, 1029)
+
+[node name="tree_ancient_227" parent="WorldObjects/Obstacles" instance=ExtResource("tree_ancient")]
+position = Vector2(955, 1002)
+
+[node name="tree_dead_228" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1033, 1009)
+
+[node name="tree_charred_229" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1084, 1015)
+
+[node name="tree_dead_230" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1153, 1005)
+
+[node name="tree_charred_231" parent="WorldObjects/Obstacles" instance=ExtResource("tree_charred")]
+position = Vector2(1221, 1011)
+
+[node name="forest_withered_shrub_232" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1241, 1033)
+
+[node name="tree_dead_233" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1284, 1010)
+
+[node name="tree_dead_234" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1356, 1001)
+
+[node name="tree_dead_235" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1398, 1017)
+
+[node name="tree_dead_236" parent="WorldObjects/Obstacles" instance=ExtResource("tree_dead")]
+position = Vector2(1471, 1011)
+
+[node name="forest_withered_shrub_237" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1491, 1033)
+
+[node name="prop_workbench_small_238" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_workbench_small")]
+position = Vector2(1216, 288)
+
+[node name="prop_crate_239" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_crate")]
+position = Vector2(1280, 292)
+
+[node name="prop_crate_240" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_crate")]
+position = Vector2(1312, 320)
+
+[node name="prop_barrel_241" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_barrel")]
+position = Vector2(1344, 352)
+
+[node name="prop_barrel_damaged_242" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_barrel_damaged")]
+position = Vector2(1344, 416)
+
+[node name="prop_crate_broken_243" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_crate_broken")]
+position = Vector2(1184, 456)
+
+[node name="prop_wood_debris_charred_244" parent="WorldObjects/EnvironmentalProps" instance=ExtResource("prop_wood_debris_charred")]
+position = Vector2(1216, 468)
+
+[node name="forest_broken_trunk_245" parent="WorldObjects/Obstacles" instance=ExtResource("forest_broken_trunk")]
+position = Vector2(1096, 736)
+
+[node name="forest_stump_246" parent="WorldObjects/Obstacles" instance=ExtResource("forest_stump")]
+position = Vector2(1280, 832)
+
+[node name="forest_roots_247" parent="WorldObjects/Obstacles" instance=ExtResource("forest_roots")]
+position = Vector2(1088, 864)
+
+[node name="forest_withered_shrub_248" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1216, 704)
+
+[node name="prop_wood_debris_charred_249" parent="WorldObjects/Decorations" instance=ExtResource("prop_wood_debris_charred")]
+position = Vector2(1248, 736)
+
+[node name="forest_brambles_250" parent="WorldObjects/Obstacles" instance=ExtResource("forest_brambles")]
+position = Vector2(1328, 736)
+
+[node name="forest_rock_cluster_251" parent="WorldObjects/Obstacles" instance=ExtResource("forest_rock_cluster")]
+position = Vector2(352, 656)
+
+[node name="forest_roots_252" parent="WorldObjects/Obstacles" instance=ExtResource("forest_roots")]
+position = Vector2(352, 896)
+
+[node name="forest_rock_cluster_253" parent="WorldObjects/Obstacles" instance=ExtResource("forest_rock_cluster")]
+position = Vector2(448, 656)
+
+[node name="prop_fallen_log_254" parent="WorldObjects/Obstacles" instance=ExtResource("prop_fallen_log")]
+position = Vector2(448, 896)
+
+[node name="forest_rock_cluster_255" parent="WorldObjects/Obstacles" instance=ExtResource("forest_rock_cluster")]
+position = Vector2(544, 656)
+
+[node name="forest_roots_256" parent="WorldObjects/Obstacles" instance=ExtResource("forest_roots")]
+position = Vector2(544, 896)
+
+[node name="forest_rock_cluster_257" parent="WorldObjects/Obstacles" instance=ExtResource("forest_rock_cluster")]
+position = Vector2(640, 656)
+
+[node name="prop_fallen_log_258" parent="WorldObjects/Obstacles" instance=ExtResource("prop_fallen_log")]
+position = Vector2(640, 896)
+
+[node name="prop_boulder_small_259" parent="WorldObjects/Obstacles" instance=ExtResource("prop_boulder_small")]
+position = Vector2(576, 832)
+
+[node name="forest_brambles_260" parent="WorldObjects/Obstacles" instance=ExtResource("forest_brambles")]
+position = Vector2(352, 864)
+
+[node name="forest_ferns_261" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(157, 596)
+
+[node name="forest_bush_262" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1221, 161)
+
+[node name="forest_withered_shrub_263" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(926, 315)
+
+[node name="forest_ferns_264" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(825, 622)
+
+[node name="forest_bush_265" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(354, 123)
+
+[node name="forest_bush_266" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(490, 418)
+
+[node name="forest_ferns_267" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(812, 637)
+
+[node name="forest_ferns_268" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(994, 478)
+
+[node name="forest_withered_shrub_269" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1300, 768)
+
+[node name="forest_withered_shrub_270" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(775, 920)
+
+[node name="forest_bush_271" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1225, 286)
+
+[node name="forest_bush_272" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(117, 890)
+
+[node name="forest_bush_273" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(892, 408)
+
+[node name="forest_bush_274" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(337, 341)
+
+[node name="forest_bush_275" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(903, 622)
+
+[node name="forest_withered_shrub_276" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(614, 653)
+
+[node name="forest_ferns_277" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(300, 794)
+
+[node name="forest_ferns_278" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(697, 941)
+
+[node name="forest_bush_279" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(144, 378)
+
+[node name="forest_withered_shrub_280" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1406, 771)
+
+[node name="forest_bush_281" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(615, 856)
+
+[node name="forest_bush_282" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(574, 554)
+
+[node name="forest_ferns_283" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(710, 526)
+
+[node name="forest_ferns_284" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1320, 905)
+
+[node name="forest_bush_285" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(249, 802)
+
+[node name="forest_withered_shrub_286" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(725, 507)
+
+[node name="forest_withered_shrub_287" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(799, 448)
+
+[node name="forest_withered_shrub_288" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(974, 415)
+
+[node name="forest_bush_289" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(106, 261)
+
+[node name="forest_ferns_290" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(570, 308)
+
+[node name="forest_withered_shrub_291" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(378, 395)
+
+[node name="forest_ferns_292" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1132, 716)
+
+[node name="forest_ferns_293" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1369, 329)
+
+[node name="forest_ferns_294" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(538, 942)
+
+[node name="forest_ferns_295" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(759, 407)
+
+[node name="forest_ferns_296" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1430, 622)
+
+[node name="forest_bush_297" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(275, 782)
+
+[node name="forest_ferns_298" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(834, 412)
+
+[node name="forest_bush_299" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(850, 720)
+
+[node name="forest_ferns_300" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1218, 246)
+
+[node name="forest_withered_shrub_301" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(256, 956)
+
+[node name="forest_ferns_302" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(630, 559)
+
+[node name="forest_ferns_303" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(583, 428)
+
+[node name="forest_withered_shrub_304" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1424, 281)
+
+[node name="forest_ferns_305" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1085, 195)
+
+[node name="forest_ferns_306" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1043, 752)
+
+[node name="forest_bush_307" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1269, 249)
+
+[node name="forest_withered_shrub_308" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(174, 214)
+
+[node name="forest_bush_309" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1428, 885)
+
+[node name="forest_withered_shrub_310" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1295, 842)
+
+[node name="forest_bush_311" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1136, 897)
+
+[node name="forest_bush_312" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(986, 677)
+
+[node name="forest_withered_shrub_313" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(388, 623)
+
+[node name="forest_bush_314" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(556, 596)
+
+[node name="forest_ferns_315" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1420, 372)
+
+[node name="forest_bush_316" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(882, 606)
+
+[node name="forest_withered_shrub_317" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(329, 146)
+
+[node name="forest_bush_318" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(616, 390)
+
+[node name="forest_withered_shrub_319" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(679, 273)
+
+[node name="forest_withered_shrub_320" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1340, 523)
+
+[node name="forest_ferns_321" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(203, 907)
+
+[node name="forest_ferns_322" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1423, 652)
+
+[node name="forest_withered_shrub_323" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(616, 850)
+
+[node name="forest_withered_shrub_324" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(834, 693)
+
+[node name="forest_bush_325" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(302, 828)
+
+[node name="forest_ferns_326" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1451, 612)
+
+[node name="forest_bush_327" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(690, 637)
+
+[node name="forest_withered_shrub_328" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1396, 479)
+
+[node name="forest_ferns_329" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(896, 308)
+
+[node name="forest_bush_330" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(436, 492)
+
+[node name="forest_withered_shrub_331" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(758, 914)
+
+[node name="forest_bush_332" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1096, 705)
+
+[node name="forest_withered_shrub_333" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1103, 158)
+
+[node name="forest_bush_334" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1223, 163)
+
+[node name="forest_withered_shrub_335" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1190, 586)
+
+[node name="forest_ferns_336" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(148, 835)
+
+[node name="forest_withered_shrub_337" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(992, 639)
+
+[node name="forest_bush_338" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1426, 438)
+
+[node name="forest_ferns_339" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(156, 321)
+
+[node name="forest_withered_shrub_340" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(1055, 625)
+
+[node name="forest_withered_shrub_341" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(593, 472)
+
+[node name="forest_bush_342" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(342, 447)
+
+[node name="forest_ferns_343" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1210, 293)
+
+[node name="forest_withered_shrub_344" parent="WorldObjects/Decorations" instance=ExtResource("forest_withered_shrub")]
+position = Vector2(143, 706)
+
+[node name="forest_ferns_345" parent="WorldObjects/Decorations" instance=ExtResource("forest_ferns")]
+position = Vector2(1447, 819)
+
+[node name="forest_bush_346" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(1316, 835)
+
+[node name="forest_bush_347" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(107, 150)
+
+[node name="forest_bush_348" parent="WorldObjects/Decorations" instance=ExtResource("forest_bush")]
+position = Vector2(138, 842)
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="North" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(768, -16)
+shape = SubResource("horizontal")
+
+[node name="South" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(768, 1040)
+shape = SubResource("horizontal")
+
+[node name="West" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(-16, 512)
+shape = SubResource("vertical")
+
+[node name="East" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(1552, 512)
+shape = SubResource("vertical")
+
+[node name="SpawnMarker" type="Marker2D" parent="."]
+position = Vector2(288, 256)
+
+[node name="VisibleMarker" type="Polygon2D" parent="SpawnMarker"]
+z_index = 10
+color = Color(0.65, 0.78, 0.75, 1)
+polygon = PackedVector2Array(0, -10, 7, 0, 0, 10, -7, 0)
+
+[node name="LightingHooks" type="Node2D" parent="."]
+
+[node name="Camp" type="Marker2D" parent="LightingHooks"]
+position = Vector2(1248, 384)
+
+[node name="Corruption" type="Marker2D" parent="LightingHooks"]
+position = Vector2(1184, 800)

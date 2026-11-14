@@ -1,0 +1,2973 @@
+{
+  "size": [
+    1536,
+    1024
+  ],
+  "centers": {
+    "SpawnClearing": [
+      288,
+      256
+    ],
+    "DarkTrail": [
+      768,
+      224
+    ],
+    "AbandonedCamp": [
+      1248,
+      384
+    ],
+    "DamagedForest": [
+      1184,
+      800
+    ],
+    "ObstacleZone": [
+      448,
+      800
+    ]
+  },
+  "route": [
+    [
+      288,
+      256
+    ],
+    [
+      512,
+      256
+    ],
+    [
+      640,
+      192
+    ],
+    [
+      768,
+      224
+    ],
+    [
+      960,
+      224
+    ],
+    [
+      1088,
+      352
+    ],
+    [
+      1248,
+      384
+    ],
+    [
+      1280,
+      576
+    ],
+    [
+      1184,
+      800
+    ],
+    [
+      960,
+      832
+    ],
+    [
+      704,
+      768
+    ],
+    [
+      448,
+      800
+    ],
+    [
+      256,
+      672
+    ],
+    [
+      224,
+      480
+    ],
+    [
+      288,
+      256
+    ]
+  ],
+  "placements": [
+    {
+      "name": "tree_ancient",
+      "position": [
+        73,
+        119
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        129,
+        105
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        149,
+        127
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        190,
+        122
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        331,
+        110
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        379,
+        111
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        449,
+        102
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        469,
+        124
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        502,
+        105
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        571,
+        108
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        893,
+        120
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        959,
+        108
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        979,
+        130
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1018,
+        106
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1038,
+        128
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1100,
+        115
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1120,
+        137
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1148,
+        109
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1226,
+        117
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1246,
+        139
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1268,
+        116
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1336,
+        102
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1398,
+        105
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1473,
+        119
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        64,
+        185
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        134,
+        186
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1086,
+        168
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1151,
+        168
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1220,
+        166
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1272,
+        184
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1333,
+        175
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1407,
+        177
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1484,
+        169
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        55,
+        239
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        133,
+        246
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1159,
+        245
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1211,
+        232
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1342,
+        246
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1420,
+        250
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1440,
+        272
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1477,
+        248
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1497,
+        270
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        55,
+        313
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        75,
+        335
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        116,
+        296
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1405,
+        306
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1461,
+        298
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        55,
+        378
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        75,
+        400
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        132,
+        360
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        388,
+        373
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        439,
+        361
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        524,
+        364
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        572,
+        359
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        633,
+        365
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        653,
+        387
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        834,
+        369
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        894,
+        369
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1401,
+        371
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1476,
+        360
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        76,
+        437
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        96,
+        459
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        126,
+        441
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        146,
+        463
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        378,
+        432
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        398,
+        454
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        439,
+        430
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        516,
+        435
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        565,
+        430
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        641,
+        423
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        697,
+        435
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        765,
+        438
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        836,
+        430
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        899,
+        438
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        958,
+        437
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1014,
+        433
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1418,
+        434
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1463,
+        430
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        70,
+        504
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        90,
+        526
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        124,
+        489
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        329,
+        486
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        379,
+        496
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        399,
+        518
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        437,
+        505
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        505,
+        487
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        574,
+        495
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        644,
+        500
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        709,
+        501
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        729,
+        523
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        771,
+        502
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        831,
+        496
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        889,
+        492
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        965,
+        493
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1015,
+        490
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1035,
+        512
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1082,
+        492
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1396,
+        494
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1476,
+        503
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1496,
+        525
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        58,
+        555
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        78,
+        577
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        116,
+        554
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        373,
+        559
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        450,
+        554
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        470,
+        576
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        509,
+        554
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        565,
+        554
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        631,
+        562
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        704,
+        557
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        774,
+        560
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        794,
+        582
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        823,
+        558
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        902,
+        565
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        960,
+        562
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1034,
+        553
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1076,
+        550
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1163,
+        554
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1420,
+        563
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        1477,
+        562
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        58,
+        626
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        126,
+        627
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        385,
+        630
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        437,
+        614
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        503,
+        627
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        573,
+        615
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        644,
+        620
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        714,
+        625
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        734,
+        647
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        779,
+        615
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        827,
+        620
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        847,
+        642
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        885,
+        634
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        953,
+        634
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1012,
+        634
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1077,
+        618
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1144,
+        627
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1418,
+        631
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        1484,
+        614
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        56,
+        685
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        117,
+        694
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        838,
+        679
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        890,
+        680
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        910,
+        702
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        951,
+        692
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1019,
+        684
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1396,
+        686
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1416,
+        708
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1474,
+        694
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        64,
+        748
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        84,
+        770
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        129,
+        747
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        192,
+        753
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1335,
+        754
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1405,
+        758
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1478,
+        751
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1498,
+        773
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        57,
+        811
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        77,
+        833
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        136,
+        826
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        189,
+        825
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        246,
+        821
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        266,
+        843
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1339,
+        824
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1407,
+        812
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1470,
+        821
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        68,
+        887
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        116,
+        876
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        183,
+        875
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        249,
+        887
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        630,
+        890
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        695,
+        884
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1355,
+        889
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1375,
+        911
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1405,
+        872
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1471,
+        871
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1491,
+        893
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        57,
+        936
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        77,
+        958
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        136,
+        944
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        156,
+        966
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        182,
+        953
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        253,
+        939
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        316,
+        947
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        506,
+        947
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        568,
+        948
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        650,
+        942
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        709,
+        952
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        729,
+        974
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        774,
+        943
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        794,
+        965
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_young",
+      "position": [
+        823,
+        943
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        886,
+        943
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        970,
+        946
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1028,
+        946
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1080,
+        941
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1100,
+        963
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1219,
+        953
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1239,
+        975
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1285,
+        953
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1351,
+        954
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1371,
+        976
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1409,
+        954
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1429,
+        976
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1460,
+        941
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1480,
+        963
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        59,
+        1012
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        79,
+        1034
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        137,
+        1014
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        157,
+        1036
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        204,
+        1000
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        254,
+        1000
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        274,
+        1022
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        311,
+        1011
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        382,
+        1014
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        438,
+        1001
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        505,
+        1004
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        586,
+        1006
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        606,
+        1028
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        652,
+        1005
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        711,
+        1006
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        731,
+        1028
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        773,
+        1000
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        826,
+        1017
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        846,
+        1039
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        908,
+        1007
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        928,
+        1029
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_ancient",
+      "position": [
+        955,
+        1002
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1033,
+        1009
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1084,
+        1015
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1153,
+        1005
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_charred",
+      "position": [
+        1221,
+        1011
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1241,
+        1033
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1284,
+        1010
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1356,
+        1001
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1398,
+        1017
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "tree_dead",
+      "position": [
+        1471,
+        1011
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1491,
+        1033
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "prop_workbench_small",
+      "position": [
+        1216,
+        288
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_crate",
+      "position": [
+        1280,
+        292
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_crate",
+      "position": [
+        1312,
+        320
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_barrel",
+      "position": [
+        1344,
+        352
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_barrel_damaged",
+      "position": [
+        1344,
+        416
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_crate_broken",
+      "position": [
+        1184,
+        456
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "prop_wood_debris_charred",
+      "position": [
+        1216,
+        468
+      ],
+      "group": "EnvironmentalProps"
+    },
+    {
+      "name": "forest_broken_trunk",
+      "position": [
+        1096,
+        736
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_stump",
+      "position": [
+        1280,
+        832
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_roots",
+      "position": [
+        1088,
+        864
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1216,
+        704
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "prop_wood_debris_charred",
+      "position": [
+        1248,
+        736
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_brambles",
+      "position": [
+        1328,
+        736
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_rock_cluster",
+      "position": [
+        352,
+        656
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_roots",
+      "position": [
+        352,
+        896
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_rock_cluster",
+      "position": [
+        448,
+        656
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "prop_fallen_log",
+      "position": [
+        448,
+        896
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_rock_cluster",
+      "position": [
+        544,
+        656
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_roots",
+      "position": [
+        544,
+        896
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_rock_cluster",
+      "position": [
+        640,
+        656
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "prop_fallen_log",
+      "position": [
+        640,
+        896
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "prop_boulder_small",
+      "position": [
+        576,
+        832
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_brambles",
+      "position": [
+        352,
+        864
+      ],
+      "group": "Obstacles"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        157,
+        596
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1221,
+        161
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        926,
+        315
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        825,
+        622
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        354,
+        123
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        490,
+        418
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        812,
+        637
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        994,
+        478
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1300,
+        768
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        775,
+        920
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1225,
+        286
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        117,
+        890
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        892,
+        408
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        337,
+        341
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        903,
+        622
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        614,
+        653
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        300,
+        794
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        697,
+        941
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        144,
+        378
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1406,
+        771
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        615,
+        856
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        574,
+        554
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        710,
+        526
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1320,
+        905
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        249,
+        802
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        725,
+        507
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        799,
+        448
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        974,
+        415
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        106,
+        261
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        570,
+        308
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        378,
+        395
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1132,
+        716
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1369,
+        329
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        538,
+        942
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        759,
+        407
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1430,
+        622
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        275,
+        782
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        834,
+        412
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        850,
+        720
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1218,
+        246
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        256,
+        956
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        630,
+        559
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        583,
+        428
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1424,
+        281
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1085,
+        195
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1043,
+        752
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1269,
+        249
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        174,
+        214
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1428,
+        885
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1295,
+        842
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1136,
+        897
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        986,
+        677
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        388,
+        623
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        556,
+        596
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1420,
+        372
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        882,
+        606
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        329,
+        146
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        616,
+        390
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        679,
+        273
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1340,
+        523
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        203,
+        907
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1423,
+        652
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        616,
+        850
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        834,
+        693
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        302,
+        828
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1451,
+        612
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        690,
+        637
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1396,
+        479
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        896,
+        308
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        436,
+        492
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        758,
+        914
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1096,
+        705
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1103,
+        158
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1223,
+        163
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1190,
+        586
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        148,
+        835
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        992,
+        639
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1426,
+        438
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        156,
+        321
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        1055,
+        625
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        593,
+        472
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        342,
+        447
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1210,
+        293
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_withered_shrub",
+      "position": [
+        143,
+        706
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_ferns",
+      "position": [
+        1447,
+        819
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        1316,
+        835
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        107,
+        150
+      ],
+      "group": "Decorations"
+    },
+    {
+      "name": "forest_bush",
+      "position": [
+        138,
+        842
+      ],
+      "group": "Decorations"
+    }
+  ],
+  "footprints": {
+    "tree_ancient": [
+      28,
+      18
+    ],
+    "tree_young": [
+      18,
+      14
+    ],
+    "tree_dead": [
+      22,
+      16
+    ],
+    "tree_charred": [
+      24,
+      16
+    ],
+    "forest_rock_cluster": [
+      40,
+      24
+    ],
+    "prop_boulder_small": [
+      22,
+      16
+    ],
+    "prop_fallen_log": [
+      52,
+      14
+    ],
+    "prop_workbench_small": [
+      46,
+      20
+    ],
+    "prop_crate": [
+      24,
+      20
+    ],
+    "prop_crate_broken": [
+      22,
+      16
+    ],
+    "prop_barrel": [
+      20,
+      18
+    ],
+    "prop_barrel_damaged": [
+      20,
+      16
+    ],
+    "forest_brambles": [
+      42,
+      24
+    ],
+    "forest_broken_trunk": [
+      30,
+      18
+    ],
+    "forest_roots": [
+      36,
+      12
+    ],
+    "forest_stump": [
+      28,
+      18
+    ],
+    "forest_ferns": [
+      0,
+      0
+    ],
+    "forest_bush": [
+      0,
+      0
+    ],
+    "forest_withered_shrub": [
+      0,
+      0
+    ],
+    "prop_wood_debris_charred": [
+      0,
+      0
+    ]
+  },
+  "terrain_sources": [
+    0,
+    8,
+    17,
+    18,
+    58
+  ]
+}

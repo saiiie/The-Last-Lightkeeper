@@ -77,6 +77,10 @@ def main():
         assert (ROOT / name).is_dir(), name
     for p in (ROOT / 'tools').glob('*.py'):
         ast.parse(p.read_text(encoding='utf-8-sig'), filename=str(p))
+    forest_check = ROOT / 'tools/validate_forest_test.py'
+    if forest_check.is_file():
+        import runpy
+        runpy.run_path(str(forest_check), run_name='__main__')
     print('PASS: project settings, main/resource paths, 100 original PNG hashes, Web preset, workflow structure and deployment gates.')
     print('PASS: Python source syntax and required directories. No Godot execution or export validation performed locally.')
 
