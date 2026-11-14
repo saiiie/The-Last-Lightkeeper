@@ -56,6 +56,19 @@ def main():
     assert workflow['on']['workflow_dispatch']['inputs']['deploy_pages']['default'] is False
     deploy = workflow['jobs']['deploy']
     assert deploy['needs'] == 'build'
+    build_steps = workflow['jobs']['build']['steps']
+    pages_uploads = [s for s in build_steps if s.get('uses', '').startswith('actions/upload-pages-artifact@')]
+    assert len(pages_uploads) == 1
+    pages_upload = pages_uploads[0]
+    assert pages_upload['uses'] == 'actions/upload-pages-artifact@v4'
+    assert pages_upload['with'] == {'name': 'github-pages', 'path': 'build/web/'}
+    assert pages_upload['if'] == deploy['if']
+    export_index = next(i for i, s in enumerate(build_steps) if s.get('run') == 'python3 tools/remote_validate_export.py')
+    assert build_steps.index(pages_upload) > export_index
+    publish = next(s for s in deploy['steps'] if s.get('uses') == 'actions/deploy-pages@v4')
+    assert publish['with']['artifact_name'] == pages_upload['with']['name']
+    assert deploy['permissions']['pages'] == 'write'
+    assert deploy['permissions']['id-token'] == 'write'
     for gate in ['workflow_dispatch', 'inputs.deploy_pages', "vars.ENABLE_PAGES == 'true'", 'refs/heads/main']:
         assert gate in deploy['if'], gate
     for job in workflow['jobs'].values():

@@ -95,7 +95,7 @@ Deployment is disabled by default. All gates must be satisfied: successful build
 1. In **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**. Availability for private repositories depends on the GitHub plan.
 2. In **Settings → Secrets and variables → Actions → Variables**, create repository variable `ENABLE_PAGES` with value `true`. No new secret is required.
 3. In **Settings → Environments → github-pages**, optionally configure required reviewers if supported, and restrict deployment branches to `main`.
-4. Manually run **Validate and export Web** on `main` with the deployment option checked. This builds and validates that commit again; the separate deploy job downloads only its successful artifact, packages it with official Pages actions and deploys it.
+4. Manually run **Validate and export Web** on `main` with the deployment option checked. This builds and validates that commit again; the build job verifies HTML/JS/WASM/PCK files and uploads `build/web/` as `github-pages` using `actions/upload-pages-artifact@v4`. After the build succeeds, the deploy job publishes that special Pages artifact. The regular downloadable Web artifact remains separate.
 5. Use the URL shown by the deployment job/environment. The expected default is `https://saiiie.github.io/The-Last-Lightkeeper/`, but it is not live or verified by this task.
 
 Remove the variable or set it to `false` to prevent future workflow deployments. This does not unpublish an existing site; use Pages settings to unpublish if needed. Ordinary pushes continue to build artifacts only.
