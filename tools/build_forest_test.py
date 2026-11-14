@@ -37,13 +37,16 @@ def clearing(p):return min(math.hypot(p[0]-c[0],p[1]-c[1]) for c in centers.valu
 placements=[]
 def add(name,x,y,group='Obstacles'):
  placements.append(dict(name=name,position=[x,y],group=group))
-for y in range(112,1010,64):
- for x in range(64,1500,64):
-  px=x+rng.randint(-12,12);py=y+rng.randint(-10,10)
-  if distance((px,py))<100 or clearing((px,py))<152:continue
-  damaged=px>980 and py>640
-  add(rng.choice(['tree_charred','tree_dead'] if damaged else ['tree_ancient','tree_ancient','tree_young']),px,py)
-  if rng.random()<.28:add('forest_withered_shrub' if damaged else 'forest_ferns',px+20,py+22,'Decorations')
+# Irregular minimum-distance clusters; dense perimeter, sparse central groves.
+groves=[(100,210),(440,140),(860,130),(1410,220),(1430,560),(1390,880),(1050,950),(760,930),(160,900),(100,570),(610,460),(940,560)]
+for gx,gy in groves:
+ for _ in range(25):
+  px=int(rng.gauss(gx,85));py=int(rng.gauss(gy,75))
+  if not (52<=px<=1484 and 128<=py<=1008):continue
+  if distance((px,py))<94 or clearing((px,py))<142:continue
+  if any(math.hypot(px-p['position'][0],py-p['position'][1])<72 for p in placements):continue
+  damaged=px>1000 and py>620
+  add(rng.choice(['tree_charred','tree_charred','tree_dead','tree_young'] if damaged else ['tree_ancient','tree_young','tree_young','tree_dead']),px,py)
 # Camp arranged around an open center; supplies do not cross either exit.
 for name,x,y in [('prop_workbench_small',1216,288),('prop_crate',1280,292),('prop_crate',1312,320),('prop_barrel',1344,352),('prop_barrel_damaged',1344,416),('prop_crate_broken',1184,456),('prop_wood_debris_charred',1216,468)]:add(name,x,y,'EnvironmentalProps')
 for name,x,y in [('forest_broken_trunk',1096,736),('forest_stump',1280,832),('forest_roots',1088,864),('forest_withered_shrub',1216,704),('prop_wood_debris_charred',1248,736),('forest_brambles',1328,736)]:add(name,x,y,'Decorations' if specs[name][3]==0 else 'Obstacles')
@@ -53,17 +56,33 @@ for x in [352,448,544,640]:
  add('prop_fallen_log' if x in [448,640] else 'forest_roots',x,896)
 add('prop_boulder_small',576,832)
 add('forest_brambles',352,864)
-for _ in range(130):
- x=rng.randrange(80,1460);y=rng.randrange(120,960)
- if distance((x,y))>66 and clearing((x,y))>96:add(rng.choice(['forest_ferns','forest_bush','forest_withered_shrub']),x,y,'Decorations')
+# Small understory clusters, leaving visible floor between groves.
+for gx,gy in groves:
+ for _ in range(5):
+  x=int(rng.gauss(gx,58));y=int(rng.gauss(gy,45))
+  if 40<x<1496 and 72<y<1008 and distance((x,y))>70 and clearing((x,y))>100:
+   add(rng.choice(['forest_withered_shrub'] if x>1000 and y>620 else ['forest_ferns','forest_bush']),x,y,'Decorations')
+# Coherent low-frequency fields and irregular ellipses, not per-cell random noise.
+patches=[(160,350,135,100),(500,420,180,110),(790,140,180,70),(950,540,150,145),(1310,520,130,110),(320,900,150,80)]
+seeds=[(rng.uniform(0,1536),rng.uniform(0,1024),rng.randrange(8)) for _ in range(85)]
 ids=[]
 for y in range(32):
  for x in range(48):
-  p=(x*32+16,y*32+16);dist=distance(p);c=clearing(p)
-  # Low-frequency moss patches, limited dirt variation; no unverified transition tiles.
-  source=0 if (x//4+y//3)%4 else 8
-  if dist<56 or c<104:source=17 if (x+y)%7 else 18
-  if p[0]>1040 and p[1]>672 and dist>62 and c>92 and (x*7+y*13)%23==0:source=58
+  px,py=x*32+16,y*32+16
+  wave=math.sin(px/87+py/131)+.5*math.sin(py/49-px/153)
+  variant=min(seeds,key=lambda q:(q[0]-px)**2+(q[1]-py)**2)[2]
+  source=variant
+  moss=min(((px-a)/rx)**2+((py-b)/ry)**2 for a,b,rx,ry in patches)
+  if moss<.85+.18*wave:source=8+variant
+  dist=distance((px,py))
+  width=25+8*math.sin(px/113+py/137)+5*math.sin(py/61)
+  camp=((px-1250)/100)**2+((py-370)/100)**2
+  if dist<width or camp<.8+.15*wave:source=16+variant
+  corruption=((px-1190)/135)**2+((py-790)/105)**2
+  trail_accent=((px-995)/65)**2+((py-270)/48)**2
+  if (corruption<.7+.2*wave or trail_accent<.6) and dist>30:source=56+variant
+  # Sparse details in a few coherent forest-floor pockets.
+  if source<16 and moss<1.4 and .9<wave<1.12:source=48+variant
   ids.append(source)
 write('scripts/forest_terrain.gd','''extends TileMapLayer
 ## Deterministic visual cells only; no adjacency rules or gameplay.
@@ -95,6 +114,11 @@ write('scenes/main.tscn','''[gd_scene load_steps=2 format=3]
 
 [node name="Main" type="Node2D"]
 
+[node name="Backdrop" type="Polygon2D" parent="."]
+z_index = -10
+color = Color(0.025, 0.045, 0.043, 1)
+polygon = PackedVector2Array(-4096, -4096, 4096, -4096, 4096, 4096, -4096, 4096)
+
 [node name="Forest" parent="." instance=ExtResource("forest")]
 
 [node name="Overview" type="Camera2D" parent="."]
@@ -104,4 +128,3 @@ position_smoothing_enabled = false
 ''')
 write('resources/forest_test_layout.json',json.dumps(dict(size=[1536,1024],centers=centers,route=route,placements=placements,footprints={n:list(s[3:]) for n,s in specs.items()},terrain_sources=sorted(set(ids))),indent=2)+'\n')
 print(f'Authored {len(placements)} objects, {len(used)} reusable prefabs and 1536 terrain cells.')
-

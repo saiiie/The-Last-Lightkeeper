@@ -6,11 +6,15 @@ ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'resources/forest_test_layout.json').read_text())
 scene=(ROOT/'scenes/levels/whispering_forest_test.tscn').read_text()
 rects=[]
+assets={a['path']:a for a in json.loads((ROOT/'assets/asset_manifest.json').read_text())['assets']}
 for i,p in enumerate(data['placements']):
  name=p['name'];x,y=p['position']
  assert f'name="{name}_{i:03}"' in scene
  assert f'position = Vector2({x}, {y})' in scene
  prefab=(ROOT/f'scenes/props/forest/{name}.tscn').read_text()
+ texture=re.search(r'path="(res://[^\"]+\.png)"',prefab)[1]
+ asset=assets[texture];width,height=asset['width'],asset['height']
+ assert 0<=x-width/2 and x+width/2<=1536 and y-height+8>=0 and y+8<=1024, f'Sprite outside map: {name}'
  match=re.search(r'size = Vector2\((\d+), (\d+)\)',prefab)
  if match:
   w,h=map(int,match.groups());assert [w,h]==data['footprints'][name]
