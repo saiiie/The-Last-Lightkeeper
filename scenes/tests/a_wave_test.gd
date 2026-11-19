@@ -1,7 +1,6 @@
 extends Node2D
 
 const MockBeacon := preload("res://scenes/tests/a_thornbound_test.gd").MockBeacon
-const BOSS_STAND_IN := preload("res://scenes/enemies/hush_brute.tscn")
 
 @onready var manager = $WaveManager
 var beacon := MockBeacon.new()
@@ -12,17 +11,16 @@ var failures := 0
 
 func _ready() -> void:
 	add_child(beacon)
-	manager.boss_scene = BOSS_STAND_IN
 	manager.wave_started.connect(_show_wave)
 	manager.wave_cleared.connect(func(number: int): clears.append(number))
 	manager.all_waves_cleared.connect(func(): finishes += 1)
 	manager.start_run($Player, beacon, self)
-	if "--verify-a8" in OS.get_cmdline_user_args():
+	if "--verify-a8" in OS.get_cmdline_user_args() or "--verify-a10" in OS.get_cmdline_user_args():
 		_verify()
 
 
 func _show_wave(number: int, total: int) -> void:
-	$HUD/Status.text = "Wave %d/%d | Test only: F9/F10 jump | Brute stands in for Warden" % [number, total]
+	$HUD/Status.text = "Wave %d/%d | Test only: F9/F10 jump" % [number, total]
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -72,15 +70,13 @@ func _verify() -> void:
 		manager._physics_process(2.1)
 	manager._physics_process(7.1)
 	_check(manager._wave == 10 and _counts() == [3, 2, 1, 1], "final wave mix")
-	for i in 7:
-		manager._physics_process(2.1)
-	for i in 6:
-		_kill_one()
-	_check(finishes == 0, "last enemy blocks completion")
-	_kill_one()
-	_check(clears == [1, 9, 10] and finishes == 1, "single final clear")
+	_verify_final_wave(false)
+	manager.start_run($Player, beacon, self)
+	manager._begin_wave(10)
+	_verify_final_wave(true)
+	_check(clears == [1, 9, 10, 10] and finishes == 2, "single final clear per run")
 	if failures == 0:
-		print("A8 wave checks passed")
+		print("A8 and A10 wave checks passed")
 	get_tree().quit(0 if failures == 0 else 1)
 
 
@@ -89,6 +85,38 @@ func _counts() -> Array:
 	for kind in manager._queue:
 		counts[kind] += 1
 	return counts
+
+
+func _verify_final_wave(boss_first: bool) -> void:
+	var previous_finishes := finishes
+	var previous_clears := clears.size()
+	for i in 7:
+		manager._physics_process(2.1)
+	var regulars: Array[Node] = []
+	var boss: Node
+	var mix := {}
+	for id in manager._alive:
+		var enemy := instance_from_id(id) as Node
+		var kind := enemy.scene_file_path.get_file().get_basename()
+		mix[kind] = mix.get(kind, 0) + 1
+		if kind == "hush_warden":
+			boss = enemy
+		else:
+			regulars.append(enemy)
+	_check(mix == {"thornbound": 3, "cinder_wisp": 2, "hush_brute": 1, "hush_warden": 1}, "spawned final wave scenes")
+	if boss == null or regulars.is_empty():
+		return
+	var last: Node = regulars.pop_back() if boss_first else boss
+	if boss_first:
+		boss.take_damage(10000)
+	for enemy in regulars:
+		enemy.take_damage(10000)
+	_check(finishes == previous_finishes and clears.size() == previous_clears, "survivor blocks final clear")
+	last.take_damage(10000)
+	last.take_damage(10000)
+	manager._physics_process(60.0)
+	_check(manager._wave == 10 and not manager.is_physics_processing(), "no wave 11")
+	_check(finishes == previous_finishes + 1 and clears.size() == previous_clears + 1, "single completion")
 
 
 func _check(passed: bool, description: String) -> void:

@@ -20,7 +20,7 @@ const LIVE_CAP := 10
 const INTERMISSION := 7.0
 
 @export var spawn_markers: Array[Marker2D] = []
-@export var boss_scene: PackedScene
+@export var boss_scene: PackedScene = preload("res://scenes/enemies/hush_warden.tscn")
 
 var _player: Node2D
 var _beacon: Node2D
@@ -63,10 +63,6 @@ func _begin_wave(number: int) -> void:
 		for count in WAVES[number - 1][kind]:
 			_queue.append(kind)
 	_queue.shuffle()
-	# Keep the reserved Warden slot last until the boss scene lands in A10.
-	if _queue.has(REGULARS.size()):
-		_queue.erase(REGULARS.size())
-		_queue.append(REGULARS.size())
 	wave_started.emit(number, WAVES.size())
 
 
