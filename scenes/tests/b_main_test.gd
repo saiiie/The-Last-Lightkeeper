@@ -10,6 +10,8 @@ func _ready() -> void:
 		_verify_defeat.call_deferred()
 	elif "--verify-b8" in OS.get_cmdline_user_args():
 		_verify_victory.call_deferred()
+	elif "--verify-b9" in OS.get_cmdline_user_args():
+		_verify_boss_hud.call_deferred()
 
 
 func _verify() -> void:
@@ -37,6 +39,46 @@ func _verify() -> void:
 		print("B5 main scene checks passed")
 	else:
 		push_error("B5 menu, world, spawning, or live HUD check failed")
+	get_tree().quit(0 if passed else 1)
+
+
+func _verify_boss_hud() -> void:
+	var main = $Main
+	var card := $Main/Overlays/MainMenu/Backdrop/Center/Card
+	var panel := $Main/HUD/Boss
+	var health: ProgressBar = $Main/HUD/Boss/Readout/Health
+	var label: Label = $Main/HUD/Boss/Readout/Name
+	card.get_node("Menu/Play").pressed.emit()
+	card.get_node("Intro/Begin").pressed.emit()
+	main.waves._physics_process(0.0)
+	var passed: bool = not panel.visible
+	var bosses: Array[Node2D] = []
+	main.waves.boss_spawned.connect(func(boss: Node2D): bosses.append(boss))
+	main.waves._begin_wave(10)
+	for count in 7:
+		main.waves._physics_process(2.1)
+	passed = passed and bosses.size() == 1 and panel.visible
+	passed = passed and health.max_value == 450 and health.value == 450
+	if not bosses.is_empty():
+		bosses[0].take_damage(25)
+		passed = passed and health.value == 425 and label.text == "Hush Warden  425 / 450"
+		bosses[0].take_damage(425)
+		passed = passed and not panel.visible and not main.victory.visible
+	main.waves.start_run(main.player, main.beacon, main.world)
+	main.waves._begin_wave(10)
+	for count in 7:
+		main.waves._physics_process(2.1)
+	passed = passed and panel.visible
+	main.beacon.take_damage(200)
+	passed = passed and not panel.visible
+	$Main/Overlays/Defeat/Shade/Center/Card/Content/Restart.pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	passed = passed and main.waves._wave == 1 and not panel.visible
+	if passed:
+		print("B9 boss HUD checks passed")
+	else:
+		push_error("B9 boss HUD spawn, damage, death, or reset check failed")
 	get_tree().quit(0 if passed else 1)
 
 

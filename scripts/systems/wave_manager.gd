@@ -3,6 +3,7 @@ extends Node
 signal wave_started(current: int, total: int)
 signal wave_cleared(current: int)
 signal all_waves_cleared
+signal boss_spawned(boss: Node2D)
 
 const REGULARS := [
 	preload("res://scenes/enemies/thornbound.tscn"),
@@ -90,6 +91,8 @@ func _physics_process(delta: float) -> void:
 	_alive[id] = kind
 	enemy.died.connect(_on_death.bind(id), CONNECT_ONE_SHOT)
 	_delay = randf_range(1.2, 2.0)
+	if kind == REGULARS.size():
+		boss_spawned.emit(enemy)
 
 
 func _spawn_position() -> Vector2:

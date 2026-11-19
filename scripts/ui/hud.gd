@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var _readouts := $Status/Inset/Readouts
 @onready var _prompt: Label = $Prompt/Message
+@onready var _boss_health: ProgressBar = $Boss/Readout/Health
+@onready var _boss_label: Label = $Boss/Readout/Name
 
 
 func set_player_health(current: int, maximum: int) -> void:
@@ -29,3 +31,14 @@ func set_pulse_cooldown(remaining: float, total: float) -> void:
 func set_prompt(message: String) -> void:
 	_prompt.text = message
 	$Prompt.visible = not message.is_empty()
+
+
+func set_boss_health(current: int, maximum: int) -> void:
+	_boss_health.max_value = maximum
+	_boss_health.value = current
+	_boss_label.text = "Hush Warden  %d / %d" % [current, maximum]
+	$Boss.visible = current > 0
+
+
+func hide_boss_health() -> void:
+	$Boss.hide()

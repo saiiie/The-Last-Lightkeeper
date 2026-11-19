@@ -22,6 +22,7 @@ var _all_waves_cleared := false
 func _ready() -> void:
 	_bind_world()
 	waves.wave_started.connect(hud.set_wave)
+	waves.boss_spawned.connect(_on_boss_spawned)
 	waves.all_waves_cleared.connect(_on_all_waves_cleared)
 	menu.start_requested.connect(_start_run)
 	menu.quit_requested.connect(func(): get_tree().quit())
@@ -87,6 +88,12 @@ func _stop_run() -> void:
 	waves.stop_run()
 	world.process_mode = Node.PROCESS_MODE_DISABLED
 	hud.set_prompt("")
+	hud.hide_boss_health()
+
+
+func _on_boss_spawned(boss: Node2D) -> void:
+	hud.set_boss_health(boss.current_health, boss.max_health)
+	boss.health_changed.connect(hud.set_boss_health)
 
 
 func _reset_run(restart: bool) -> void:
