@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/thornbound.tscn" id="2_enemy"]
+[ext_resource type="Script" path="res://scenes/tests/a_light_shard_test.gd" id="3_test"]
+
+[node name="LightShardTest" type="Node2D"]
+script = ExtResource("3_test")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+
+[node name="Thornbound" parent="." instance=ExtResource("2_enemy")]
+position = Vector2(115, 0)
+
+[node name="Pickups" type="Node2D" parent="."]
+position = Vector2(25, 10)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Defeat each enemy and walk near its light shard to collect it."
+
+[node name="Status" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 48.0
+text = "Shards: 0"
