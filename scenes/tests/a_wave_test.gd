@@ -37,6 +37,7 @@ func _kill_one() -> void:
 
 func _verify() -> void:
 	manager._physics_process(0.1)
+	_check(manager._delay >= 1.2 and manager._delay <= 2.0, "early-wave spawn interval")
 	manager._physics_process(1.0)
 	_check(manager._alive.size() == 1, "staggered spawns")
 	_kill_one()
@@ -64,6 +65,8 @@ func _verify() -> void:
 	_check(_counts() == [7, 4, 3, 0], "wave 9 mix")
 	for i in 14:
 		manager._physics_process(2.1)
+		if i == 0:
+			_check(manager._delay >= 0.9 and manager._delay <= 1.45, "late-wave spawn interval")
 	_check(manager._alive.size() == 10 and manager._queue.size() == 4, "live cap")
 	while not manager._alive.is_empty():
 		_kill_one()

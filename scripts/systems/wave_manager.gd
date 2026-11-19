@@ -19,6 +19,9 @@ const WAVES := [
 ]
 const LIVE_CAP := 10
 const INTERMISSION := 7.0
+const LATE_WAVE_START := 7
+const SPAWN_INTERVAL := Vector2(1.2, 2.0)
+const LATE_SPAWN_INTERVAL := Vector2(0.9, 1.45)
 
 @export var spawn_markers: Array[Marker2D] = []
 @export var boss_scene: PackedScene = preload("res://scenes/enemies/hush_warden.tscn")
@@ -90,7 +93,8 @@ func _physics_process(delta: float) -> void:
 	var id: int = enemy.get_instance_id()
 	_alive[id] = kind
 	enemy.died.connect(_on_death.bind(id), CONNECT_ONE_SHOT)
-	_delay = randf_range(1.2, 2.0)
+	var interval := LATE_SPAWN_INTERVAL if _wave >= LATE_WAVE_START else SPAWN_INTERVAL
+	_delay = randf_range(interval.x, interval.y)
 	if kind == REGULARS.size():
 		boss_spawned.emit(enemy)
 
