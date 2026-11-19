@@ -34,13 +34,13 @@ func _add_wall(center: Vector2, size: Vector2) -> void:
 
 
 func _draw() -> void:
-	draw_rect(BOUNDS.grow(WALL_THICKNESS), Color("#101b1c"))
+	draw_rect(BOUNDS.grow(WALL_THICKNESS), Color("#304846"))
 	draw_rect(BOUNDS, Color("#223530"))
 	for x in range(-800, 900, 100):
 		draw_line(Vector2(x, -550), Vector2(x, 550), Color("#2b4138"))
 	for y in range(-500, 550, 100):
 		draw_line(Vector2(-900, y), Vector2(900, y), Color("#2b4138"))
-	draw_rect(BOUNDS.grow(-3), Color("#8bac94"), false, 6.0)
+	draw_rect(BOUNDS.grow(-4), Color("#b1c6ab"), false, 8.0)
 	draw_circle(Vector2.ZERO, 35.0, Color("#2e443b"))
 	draw_arc(Vector2.ZERO, 35.0, 0.0, TAU, 48, Color("#e0c789"), 3.0, true)
 	for marker in get_spawn_markers():

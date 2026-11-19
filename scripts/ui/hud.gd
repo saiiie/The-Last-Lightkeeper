@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var _readouts := $Status/Inset/Readouts
 @onready var _prompt: Label = $Prompt/Message
+@onready var _pulse_charge: ProgressBar = $Status/Inset/Readouts/Pulse/Charge
 @onready var _boss_health: ProgressBar = $Boss/Readout/Health
 @onready var _boss_label: Label = $Boss/Readout/Name
 
@@ -23,6 +24,7 @@ func set_shards(count: int) -> void:
 
 
 func set_pulse_cooldown(remaining: float, total: float) -> void:
+	_pulse_charge.value = clampf(1.0 - remaining / total, 0.0, 1.0) if total > 0.0 else 1.0
 	_readouts.get_node("Pulse").text = (
 		"Pulse  Ready" if remaining <= 0.0 else "Pulse  %.1f / %.1f s" % [remaining, total]
 	)

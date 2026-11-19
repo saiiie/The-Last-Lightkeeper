@@ -28,6 +28,8 @@ func _verify() -> void:
 	passed = passed and readouts.get_node("Wave").text == "Wave  4 / 10"
 	passed = passed and readouts.get_node("Shards").text == "Shards  5"
 	passed = passed and readouts.get_node("Pulse").text == "Pulse  2.4 / 6.0 s"
+	var charge: ProgressBar = readouts.get_node("Pulse/Charge")
+	passed = passed and is_equal_approx(charge.value, 0.6)
 	var prompt: Label = hud.get_node("Prompt/Message")
 	passed = passed and prompt.is_visible_in_tree() and prompt.text == "E  Repair beacon (3 shards)"
 	var hud_transform: Transform2D = readouts.get_global_transform_with_canvas()
@@ -39,6 +41,7 @@ func _verify() -> void:
 	hud.set_prompt("")
 	hud.set_pulse_cooldown(0.0, 6.0)
 	passed = passed and not prompt.is_visible_in_tree() and readouts.get_node("Pulse").text == "Pulse  Ready"
+	passed = passed and charge.value == 1.0
 	if passed:
 		print("B3 HUD checks passed")
 	else:

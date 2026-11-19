@@ -16,7 +16,7 @@ max_health = 450
 shape = SubResource("Shape")
 
 [node name="Mantle" type="Polygon2D" parent="."]
-color = Color(0.52, 0.27, 0.72, 1)
+color = Color(0.48, 0.55, 0.93, 1)
 polygon = PackedVector2Array(-42, -5, -27, -16, -30, -44, -12, -28, 0, -47, 12, -28, 30, -44, 27, -16, 42, -5, 31, 30, 12, 24, 0, 41, -12, 24, -31, 30)
 
 [node name="Mask" type="Polygon2D" parent="."]
