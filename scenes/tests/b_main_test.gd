@@ -8,6 +8,8 @@ func _ready() -> void:
 		_verify_repair.call_deferred()
 	elif "--verify-b7" in OS.get_cmdline_user_args():
 		_verify_defeat.call_deferred()
+	elif "--verify-b8" in OS.get_cmdline_user_args():
+		_verify_victory.call_deferred()
 
 
 func _verify() -> void:
@@ -129,4 +131,51 @@ func _verify_defeat() -> void:
 		print("B7 defeat and reset checks passed")
 	else:
 		push_error("B7 defeat, restart, or menu check failed")
+	get_tree().quit(0 if passed else 1)
+
+
+func _verify_victory() -> void:
+	var main = $Main
+	var card := $Main/Overlays/MainMenu/Backdrop/Center/Card
+	var content := $Main/Overlays/Victory/Shade/Center/Card/Content
+	var prompt: Label = $Main/HUD/Prompt/Message
+	card.get_node("Menu/Play").pressed.emit()
+	card.get_node("Intro/Begin").pressed.emit()
+	var rites: Array[bool] = []
+	main.beacon.witness_rite_completed.connect(func(): rites.append(true))
+	_press_interact()
+	var passed: bool = not main.victory.visible and main.beacon.light_color == main.beacon.WHITE and rites.is_empty()
+
+	main.beacon.take_damage(40)
+	main.player.add_shards(3)
+	main.player.global_position = main.beacon.global_position + Vector2(110, 0)
+	main.waves.all_waves_cleared.emit()
+	_press_interact()
+	passed = passed and prompt.text == "Return to the beacon" and rites.is_empty() and not main.victory.visible
+	main.player.global_position = main.beacon.global_position + Vector2(72, 0)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	passed = passed and prompt.text == "E  Perform the Witness Rite"
+	_press_interact()
+	_press_interact()
+	passed = passed and main.victory.visible and rites.size() == 1 and main.beacon.light_color == main.beacon.AMBER
+	passed = passed and main.player.shards == 3 and main.beacon.current_health == 160
+	passed = passed and not main.waves.is_physics_processing() and not main.defeat.visible
+
+	content.get_node("Replay").pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_press_interact()
+	passed = passed and not main.victory.visible and main.beacon.light_color == main.beacon.WHITE
+	passed = passed and main.waves._wave == 1 and main.player.shards == 0
+	main.waves.all_waves_cleared.emit()
+	_press_interact()
+	content.get_node("Menu").pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	passed = passed and main.menu.visible and not main.victory.visible and not main.world.visible
+	if passed:
+		print("B8 Witness Rite and victory checks passed")
+	else:
+		push_error("B8 victory gating, Witness Rite, or ending navigation failed")
 	get_tree().quit(0 if passed else 1)

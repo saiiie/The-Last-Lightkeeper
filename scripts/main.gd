@@ -10,20 +10,25 @@ const GAME_WORLD := preload("res://scenes/arena/game_world.tscn")
 @onready var hud = $HUD
 @onready var menu = $Overlays/MainMenu
 @onready var defeat = $Overlays/Defeat
+@onready var victory = $Overlays/Victory
 
 var player
 var beacon
 var arena
 var _run_active := false
+var _all_waves_cleared := false
 
 
 func _ready() -> void:
 	_bind_world()
 	waves.wave_started.connect(hud.set_wave)
+	waves.all_waves_cleared.connect(_on_all_waves_cleared)
 	menu.start_requested.connect(_start_run)
 	menu.quit_requested.connect(func(): get_tree().quit())
 	defeat.restart_requested.connect(_reset_run.bind(true), CONNECT_DEFERRED)
 	defeat.menu_requested.connect(_reset_run.bind(false), CONNECT_DEFERRED)
+	victory.replay_requested.connect(_reset_run.bind(true), CONNECT_DEFERRED)
+	victory.menu_requested.connect(_reset_run.bind(false), CONNECT_DEFERRED)
 
 
 func _bind_world() -> void:
@@ -39,9 +44,11 @@ func _bind_world() -> void:
 	beacon.health_changed.connect(hud.set_beacon_health)
 	player.died.connect(_on_defeat.bind("The Lightkeeper has fallen."))
 	beacon.destroyed.connect(_on_defeat.bind("The beacon has gone dark."))
+	beacon.witness_rite_completed.connect(_on_rite_completed)
 
 
 func _start_run() -> void:
+	_all_waves_cleared = false
 	_run_active = true
 	world.show()
 	hud.set_player_health(player.current_health, player.max_health)
@@ -57,18 +64,36 @@ func _start_run() -> void:
 func _on_defeat(reason: String) -> void:
 	if not _run_active:
 		return
+	_stop_run()
+	defeat.show_defeat(reason)
+
+
+func _on_all_waves_cleared() -> void:
+	if _run_active:
+		_all_waves_cleared = true
+		_update_interaction_prompt()
+
+
+func _on_rite_completed() -> void:
+	if not _run_active or not _all_waves_cleared:
+		return
+	_stop_run()
+	victory.show_victory()
+
+
+func _stop_run() -> void:
 	_run_active = false
 	player.set_controls_enabled(false)
 	waves.stop_run()
 	world.process_mode = Node.PROCESS_MODE_DISABLED
 	hud.set_prompt("")
-	defeat.show_defeat(reason)
 
 
 func _reset_run(restart: bool) -> void:
-	if not defeat.visible:
+	if not defeat.visible and not victory.visible:
 		return
 	defeat.hide()
+	victory.hide()
 	remove_child(world)
 	world.queue_free()
 	world = GAME_WORLD.instantiate()
@@ -89,6 +114,9 @@ func _physics_process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed("interact") or not _can_interact():
 		return
+	if _all_waves_cleared:
+		beacon.perform_witness_rite()
+		return
 	if beacon.current_health < beacon.max_health and player.spend_shards(REPAIR_COST):
 		beacon.repair(REPAIR_AMOUNT)
 		_update_interaction_prompt()
@@ -106,10 +134,14 @@ func _can_interact() -> bool:
 func _update_interaction_prompt() -> void:
 	var message := ""
 	if _can_interact():
-		if beacon.current_health == beacon.max_health:
+		if _all_waves_cleared:
+			message = "E  Perform the Witness Rite"
+		elif beacon.current_health == beacon.max_health:
 			message = "Beacon at full health"
 		elif player.shards < REPAIR_COST:
 			message = "Need %d shards to repair the beacon" % REPAIR_COST
 		else:
 			message = "E  Repair beacon (%d shards)" % REPAIR_COST
+	elif _all_waves_cleared and _run_active:
+		message = "Return to the beacon"
 	hud.set_prompt(message)

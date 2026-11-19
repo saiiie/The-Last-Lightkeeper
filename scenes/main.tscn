@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/arena/game_world.tscn" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/menus/main_menu.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://scenes/ui/defeat_overlay.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/ui/victory_overlay.tscn" id="9"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1")
@@ -23,3 +24,5 @@ visible = false
 [node name="MainMenu" parent="Overlays" instance=ExtResource("7")]
 
 [node name="Defeat" parent="Overlays" instance=ExtResource("8")]
+
+[node name="Victory" parent="Overlays" instance=ExtResource("9")]
