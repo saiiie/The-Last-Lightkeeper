@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/arena/arena.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/beacon/beacon.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3"]
+
+[node name="World" type="Node2D"]
+visible = false
+
+[node name="Arena" parent="." instance=ExtResource("1")]
+
+[node name="Beacon" parent="." instance=ExtResource("2")]
+
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector2(72, 0)

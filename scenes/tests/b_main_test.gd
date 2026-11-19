@@ -6,6 +6,8 @@ func _ready() -> void:
 		_verify.call_deferred()
 	elif "--verify-b6" in OS.get_cmdline_user_args():
 		_verify_repair.call_deferred()
+	elif "--verify-b7" in OS.get_cmdline_user_args():
+		_verify_defeat.call_deferred()
 
 
 func _verify() -> void:
@@ -85,3 +87,46 @@ func _press_interact() -> void:
 	press.action = "interact"
 	press.pressed = true
 	get_viewport().push_input(press)
+
+
+func _verify_defeat() -> void:
+	var main = $Main
+	var card := $Main/Overlays/MainMenu/Backdrop/Center/Card
+	var content := $Main/Overlays/Defeat/Shade/Center/Card/Content
+	var labels := $Main/HUD/Status/Inset/Readouts
+	card.get_node("Menu/Play").pressed.emit()
+	card.get_node("Intro/Begin").pressed.emit()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	var passed: bool = main.waves._alive.size() == 1
+	main.player.add_shards(4)
+	main.beacon.take_damage(25)
+	main.player.take_damage(100)
+	passed = passed and main.defeat.visible and content.get_node("Reason").text == "The Lightkeeper has fallen."
+	passed = passed and not main.waves.is_physics_processing() and main.waves._actors == null
+	passed = passed and main.world.process_mode == Node.PROCESS_MODE_DISABLED
+	_press_interact()
+	passed = passed and main.beacon.current_health == 175 and main.player.shards == 4
+	content.get_node("Restart").pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	passed = passed and main.world.visible and not main.defeat.visible and not main.menu.visible
+	passed = passed and main.player.current_health == 100 and main.beacon.current_health == 200 and main.player.shards == 0
+	passed = passed and labels.get_node("Wave").text == "Wave  1 / 10" and labels.get_node("Shards").text == "Shards  0"
+	passed = passed and main.waves.is_physics_processing()
+
+	main.beacon.take_damage(200)
+	passed = passed and main.defeat.visible and content.get_node("Reason").text == "The beacon has gone dark."
+	passed = passed and not main.waves.is_physics_processing() and not main.player._controls_enabled
+	content.get_node("Menu").pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	passed = passed and main.menu.visible and not main.world.visible and not main.hud.visible and not main.defeat.visible
+	card.get_node("Menu/Play").pressed.emit()
+	card.get_node("Intro/Begin").pressed.emit()
+	passed = passed and main.world.visible and main.hud.visible and main.beacon.current_health == 200
+	if passed:
+		print("B7 defeat and reset checks passed")
+	else:
+		push_error("B7 defeat, restart, or menu check failed")
+	get_tree().quit(0 if passed else 1)
