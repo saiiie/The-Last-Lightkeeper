@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/cinder_wisp.gd" id="1_wisp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wisp"]
+radius = 13.0
+
+[node name="CinderWisp" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_wisp")
+max_health = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wisp")
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0.75, 0.48, 1, 1)
+polygon = PackedVector2Array(0, -17, 13, 0, 0, 17, -13, 0)
