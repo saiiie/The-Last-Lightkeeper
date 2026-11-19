@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/thornbound.tscn" id="2_thornbound"]
+[ext_resource type="Script" path="res://scenes/tests/a_thornbound_test.gd" id="3_test"]
+
+[node name="ThornboundTest" type="Node2D"]
+script = ExtResource("3_test")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(100, 0)
+
+[node name="Thornbound" parent="." instance=ExtResource("2_thornbound")]
+position = Vector2(320, 0)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Defend the mock beacon. WASD to move, left/right click to attack, Q to pulse."
+
+[node name="Status" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 48.0
