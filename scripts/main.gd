@@ -17,6 +17,7 @@ var beacon
 var arena
 var _run_active := false
 var _all_waves_cleared := false
+var _rite_in_progress := false
 
 
 func _ready() -> void:
@@ -50,6 +51,7 @@ func _bind_world() -> void:
 
 func _start_run() -> void:
 	_all_waves_cleared = false
+	_rite_in_progress = false
 	_run_active = true
 	world.show()
 	hud.set_player_health(player.current_health, player.max_health)
@@ -76,7 +78,7 @@ func _on_all_waves_cleared() -> void:
 
 
 func _on_rite_completed() -> void:
-	if not _run_active or not _all_waves_cleared:
+	if not _run_active or not _rite_in_progress:
 		return
 	_stop_run()
 	victory.show_victory()
@@ -119,9 +121,13 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("interact") or not _can_interact():
+	if not event.is_action_pressed("interact") or _rite_in_progress or not _can_interact():
 		return
 	if _all_waves_cleared:
+		_rite_in_progress = true
+		player.set_controls_enabled(false)
+		waves.stop_run()
+		hud.set_prompt("")
 		beacon.perform_witness_rite()
 		return
 	if beacon.current_health < beacon.max_health and player.spend_shards(REPAIR_COST):
@@ -139,6 +145,8 @@ func _can_interact() -> bool:
 
 
 func _update_interaction_prompt() -> void:
+	if _rite_in_progress:
+		return
 	var message := ""
 	if _can_interact():
 		if _all_waves_cleared:

@@ -43,6 +43,13 @@ func _verify() -> void:
 	passed = passed and damage_updates == [155, 185, 200]
 	beacon.perform_witness_rite()
 	beacon.perform_witness_rite()
+	passed = passed and rites == 0 and not beacon.rite_completed
+	var fresh = BEACON.instantiate()
+	add_child(fresh)
+	fresh.perform_witness_rite()
+	fresh.take_damage(200)
+	fresh.perform_witness_rite()
+	await get_tree().create_timer(1.4).timeout
 	passed = passed and rites == 1 and beacon.rite_completed and beacon.light_color == beacon.AMBER
 	beacon.take_damage(500)
 	beacon.take_damage(1)
@@ -50,10 +57,6 @@ func _verify() -> void:
 	passed = passed and destructions == 1 and damage_updates == [155, 185, 200, 0]
 	passed = passed and beacon.current_health == 0 and beacon.light_color == beacon.EXTINGUISHED
 
-	var fresh = BEACON.instantiate()
-	add_child(fresh)
-	fresh.take_damage(200)
-	fresh.perform_witness_rite()
 	passed = passed and not fresh.rite_completed and fresh.light_color == fresh.EXTINGUISHED
 	if passed:
 		print("B2 beacon checks passed")

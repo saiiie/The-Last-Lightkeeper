@@ -8,11 +8,16 @@ signal witness_rite_completed
 const WHITE := Color("#fff9eb")
 const AMBER := Color("#ffb34d")
 const EXTINGUISHED := Color("#45545a")
+const RITE_DURATION := 1.2
 const max_health: int = 200
 
 var current_health: int = max_health
 var rite_completed: bool = false
-var light_color: Color = WHITE
+var light_color: Color = WHITE:
+	set(value):
+		light_color = value
+		queue_redraw()
+var _rite_tween: Tween
 
 
 func take_damage(amount: int) -> void:
@@ -21,8 +26,10 @@ func take_damage(amount: int) -> void:
 	current_health = maxi(0, current_health - amount)
 	var extinguished := current_health == 0
 	if extinguished:
+		if _rite_tween != null:
+			_rite_tween.kill()
+			_rite_tween = null
 		light_color = EXTINGUISHED
-		queue_redraw()
 	health_changed.emit(current_health, max_health)
 	if extinguished:
 		destroyed.emit()
@@ -36,11 +43,16 @@ func repair(amount: int) -> void:
 
 
 func perform_witness_rite() -> void:
-	if rite_completed or current_health == 0:
+	if rite_completed or _rite_tween != null or current_health == 0:
 		return
+	_rite_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_rite_tween.tween_property(self, "light_color", AMBER, RITE_DURATION)
+	_rite_tween.tween_callback(_finish_witness_rite)
+
+
+func _finish_witness_rite() -> void:
+	_rite_tween = null
 	rite_completed = true
-	light_color = AMBER
-	queue_redraw()
 	witness_rite_completed.emit()
 
 

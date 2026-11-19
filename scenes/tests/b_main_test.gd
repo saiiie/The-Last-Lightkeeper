@@ -8,7 +8,7 @@ func _ready() -> void:
 		_verify_repair.call_deferred()
 	elif "--verify-b7" in OS.get_cmdline_user_args():
 		_verify_defeat.call_deferred()
-	elif "--verify-b8" in OS.get_cmdline_user_args():
+	elif "--verify-b8" in OS.get_cmdline_user_args() or "--verify-b10" in OS.get_cmdline_user_args():
 		_verify_victory.call_deferred()
 	elif "--verify-b9" in OS.get_cmdline_user_args():
 		_verify_boss_hud.call_deferred()
@@ -200,6 +200,11 @@ func _verify_victory() -> void:
 	passed = passed and prompt.text == "E  Perform the Witness Rite"
 	_press_interact()
 	_press_interact()
+	passed = passed and not main.victory.visible and rites.is_empty() and not main.player._controls_enabled
+	await get_tree().create_timer(0.6).timeout
+	passed = passed and main.beacon.light_color != main.beacon.WHITE and main.beacon.light_color != main.beacon.AMBER
+	passed = passed and not main.victory.visible and rites.is_empty()
+	await get_tree().create_timer(0.8).timeout
 	passed = passed and main.victory.visible and rites.size() == 1 and main.beacon.light_color == main.beacon.AMBER
 	passed = passed and main.player.shards == 3 and main.beacon.current_health == 160
 	passed = passed and not main.waves.is_physics_processing() and not main.defeat.visible
@@ -212,12 +217,13 @@ func _verify_victory() -> void:
 	passed = passed and main.waves._wave == 1 and main.player.shards == 0
 	main.waves.all_waves_cleared.emit()
 	_press_interact()
+	await get_tree().create_timer(1.4).timeout
 	content.get_node("Menu").pressed.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
 	passed = passed and main.menu.visible and not main.victory.visible and not main.world.visible
 	if passed:
-		print("B8 Witness Rite and victory checks passed")
+		print("B8 and B10 Witness Rite and victory checks passed")
 	else:
 		push_error("B8 victory gating, Witness Rite, or ending navigation failed")
 	get_tree().quit(0 if passed else 1)
