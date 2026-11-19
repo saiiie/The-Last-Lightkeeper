@@ -29,3 +29,11 @@ polygon = PackedVector2Array(0, -6, 6, 0, 0, 6, -6, 0)
 visible = false
 width = 6.0
 default_color = Color(1, 0.87, 0.58, 1)
+
+[node name="PulseRing" type="Line2D" parent="."]
+visible = false
+top_level = true
+width = 5.0
+default_color = Color(0.55, 0.93, 1, 1)
+closed = true
+antialiased = true

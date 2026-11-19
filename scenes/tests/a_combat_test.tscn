@@ -13,4 +13,9 @@ script = ExtResource("2_test")
 [node name="Instructions" type="Label" parent="HUD"]
 offset_left = 20.0
 offset_top = 20.0
-text = "Aim at a dummy. Left click for melee, right click to fire. Labels show total damage."
+text = "Left click for melee, right click to fire, Q to pulse. Dummy labels show total damage."
+
+[node name="PulseStatus" type="Label" parent="HUD"]
+offset_left = 20.0
+offset_top = 48.0
+text = "Pulse ready"
