@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3]
-
-[ext_resource type="Texture2D" path="res://assets/environments/forest/vegetation/forest_bush.png" id="texture"]
-
-[node name="forest_bush" type="Node2D"]
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("texture")
-offset = Vector2(0, -24.0)
